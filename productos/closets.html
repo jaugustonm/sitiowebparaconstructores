@@ -9,6 +9,7 @@
     <meta name="description" content="Fabricación de clósets empotrados, armarios y vestidores (walk-in) para constructoras. Soluciones de almacenamiento en Melamina RH optimizadas para vivienda masiva.">
 
     <link rel="canonical" href="https://www.incormaderas.com/productos/closets.html" />
+    <link rel="icon" type="image/webp" href="https://carpinteriaarquitectonica.com.co/assets/favicon-incormaderas.webp">
     
     <link rel="preload" as="image" href="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=1920&q=80" fetchpriority="high">
 
@@ -126,9 +127,11 @@
         .btn-whatsapp-float:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6); }
         .btn-whatsapp-float svg { width: 32px; height: 32px; fill: white; }
 
-        /* --- 4. HERO PRODUCT (Con IMG tag) --- */
+        /* --- 4. HERO PRODUCT (Ajuste Visual) --- */
         .hero-product { 
-            position: relative; height: 60vh; min-height: 450px; 
+            position: relative; 
+            height: 65vh; /* Aumentado para dar más aire */
+            min-height: 550px; /* Altura mínima aumentada */
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
             padding-top: 80px; /* Ajuste header móvil */
@@ -137,10 +140,23 @@
         @media (min-width: 768px) { .hero-product { padding-top: 96px; } }
 
         .hero-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 0; }
-        .hero-content { position: relative; z-index: 10; max-width: 800px; padding: 0 1.5rem; width: 100%; }
+        .hero-content { position: relative; z-index: 10; max-width: 850px; padding: 0 1.5rem; width: 100%; }
 
-        .hero-product h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
-        .hero-product p { font-size: 1.25rem; opacity: 0.95; margin: 0 auto; }
+        /* Ajuste de tipografía para evitar que se vea amontonado */
+        .hero-product h1 { 
+            font-size: clamp(2.2rem, 5vw, 4rem); 
+            font-weight: 800; 
+            margin-bottom: 1.5rem; 
+            line-height: 1.25; /* Interlineado aumentado */
+            letter-spacing: -0.02em; 
+        }
+        .hero-product p { 
+            font-size: 1.25rem; 
+            opacity: 0.95; 
+            margin: 0 auto; 
+            line-height: 1.6; /* Mejor lectura */
+            max-width: 800px;
+        }
 
         /* --- 5. CONTENT SECTIONS --- */
         .content-section { padding: 4rem 0; }
@@ -235,9 +251,7 @@
         <div class="container header-grid">
             <div class="logo-area">
                 <a href="../index.html" class="logo" title="Volver al inicio">
-                    <div style="background: var(--orange-600); width: 2.4rem; height: 2.4rem; color: white; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 1.1rem;">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25V4.5c0-.27-.22-.5-.5-.5h-3.75c-.85 0-1.65-.33-2.25-.93L11 1.84"/><path d="m15 12 5-5"/></svg>
-                    </div>
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
                     INCORMADERAS
                 </a>
             </div>

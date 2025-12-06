@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Planta de Carpintería Industrial y Corte CNC en Bogotá | Incormaderas</title>
+    <title>Mobiliario para Zonas Comunes y Lockers | Incormaderas</title>
     
-    <meta name="description" content="Recorrido por nuestra fábrica de mobiliario en Bogotá. Maquinaria CNC, enchape industrial y capacidad >500 unidades/mes para grandes proyectos constructivos.">
+    <meta name="description" content="Dotación de carpintería para zonas comunes: Lockers inteligentes para paquetería, mobiliario para lobbies, coworking y gimnasios en proyectos de vivienda.">
 
-    <link rel="canonical" href="https://www.incormaderas.com/infraestructura.html" />
+    <link rel="canonical" href="https://www.incormaderas.com/productos/zonas-comunes.html" />
+    <link rel="icon" type="image/webp" href="https://carpinteriaarquitectonica.com.co/assets/favicon-incormaderas.webp">
     
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=1920&q=80" fetchpriority="high">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" fetchpriority="high">
 
     <style>
         /* --- 1. VARIABLES & RESET --- */
@@ -24,16 +25,19 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-main); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-        
+
         /* --- 2. UTILITIES --- */
         .container { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 1.5rem; }
         .grid { display: grid; gap: 2rem; }
         .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .items-center { align-items: center; }
         .text-center { text-align: center; }
+        .w-full { width: 100%; }
+        .hidden { display: none; }
         .uppercase { text-transform: uppercase; }
         .font-bold { font-weight: 700; }
-        .hidden { display: none; }
-        .w-full { width: 100%; }
         
         @media (min-width: 768px) {
             .container { padding: 0 2.5rem; }
@@ -44,7 +48,7 @@
             .md-hidden { display: none; }
         }
 
-        /* --- 3. HEADER RESPONSIVO (Ruta Raíz) --- */
+        /* --- 3. HEADER RESPONSIVO --- */
         header { 
             position: fixed; top: 0; width: 100%; 
             background: rgba(255,255,255,0.98); 
@@ -123,107 +127,43 @@
         .btn-whatsapp-float:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6); }
         .btn-whatsapp-float svg { width: 32px; height: 32px; fill: white; }
 
-        /* --- 4. PAGE HERO --- */
-        .hero-infra { 
+        /* --- 4. HERO PRODUCT --- */
+        .hero-product { 
             position: relative; height: 60vh; min-height: 450px; 
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=1920&q=80');
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
             padding-top: 80px;
         }
-        @media (min-width: 768px) { .hero-infra { padding-top: 96px; } }
+        @media (min-width: 768px) { .hero-product { padding-top: 96px; } }
 
-        .hero-infra h1 { font-size: clamp(2.2rem, 5vw, 4rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; }
-        .hero-infra p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+        .hero-product h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+        .hero-product p { font-size: 1.25rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
 
-        /* --- 5. METRICS (Grid Móvil Mejorado) --- */
-        .metrics-bar { 
-            background: var(--orange-600); 
-            color: white; 
-            padding: 3rem 0; 
-            margin-top: -3rem; 
-            position: relative; 
-            z-index: 10; 
-            border-bottom: 4px solid var(--orange-700); 
-        }
-        
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* 2 columnas en móvil */
-            gap: 2rem 1rem;
-        }
-        @media (min-width: 768px) {
-            .metrics-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
+        /* --- 5. CONTENT SECTIONS --- */
+        .content-section { padding: 4rem 0; }
+        @media(min-width:768px){ .content-section { padding: 6rem 0; } }
 
-        .metric-item { 
-            text-align: center; 
-            padding: 0 0.5rem;
-        }
-        @media (min-width: 768px) {
-            .metric-item { 
-                border-right: 1px solid rgba(255,255,255,0.2); 
-            }
-            .metric-item:last-child { border-right: none; }
-        }
+        .feature-card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--slate-200); transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
+        .feature-card:hover { border-color: var(--orange-600); box-shadow: 0 20px 40px -5px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        
+        .feature-img { height: 240px; margin: -2rem -2rem 1.5rem -2rem; overflow: hidden; background: var(--slate-100); }
+        .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .feature-card:hover .feature-img img { transform: scale(1.05); }
 
-        .metric-value { font-size: 2.5rem; font-weight: 800; line-height: 1; margin-bottom: 0.5rem; }
-        @media (min-width: 768px) { .metric-value { font-size: 3rem; } }
-        
-        .metric-label { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; font-weight: 700; opacity: 0.95; }
+        .feature-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--slate-900); }
+        .feature-desc { color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
 
-        /* --- 6. PROCESS CARDS --- */
-        .process-card { background: white; border: 1px solid var(--slate-200); overflow: hidden; transition: 0.3s; border-radius: 8px; height: 100%; display: flex; flex-direction: column; }
-        .process-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-color: var(--orange-600); }
-        
-        .process-img { height: 220px; background: var(--slate-200); position: relative; }
-        .process-img img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .process-step { position: absolute; top: 1rem; left: 1rem; background: var(--slate-900); color: white; padding: 4px 12px; font-weight: 700; font-size: 0.8rem; border-radius: 4px; letter-spacing: 0.05em; }
-        
-        .process-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .process-title { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--slate-900); }
-        
-        .tech-spec { font-size: 0.75rem; color: var(--slate-600); font-family: monospace; background: var(--slate-100); padding: 0.5rem; display: block; margin-top: auto; border-radius: 4px; border: 1px solid var(--slate-200); }
+        /* --- 6. CTA --- */
+        .cta-section { background: var(--slate-800); color: white; padding: 4rem 0; text-align: center; }
+        @media(min-width:768px){ .cta-section { padding: 6rem 0; } }
 
-        /* --- 7. CONFIANZA (Checklist Fix) --- */
-        .trust-section { background: var(--slate-100); color: var(--slate-800); padding: 4rem 0; border-top: 1px solid var(--slate-200); }
-        @media(min-width:768px){ .trust-section { padding: 6rem 0; } }
+        .cta-title { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .cta-desc { color: var(--slate-300); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; }
 
-        .trust-title { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--slate-900); letter-spacing: -0.02em; line-height: 1.2; }
-        
-        /* Solución Nuclear para listas */
-        .check-list { list-style: none; margin-top: 2rem; padding-left: 0; }
-        .check-list li { 
-            margin-bottom: 1.5rem; 
-            display: flex; 
-            align-items: flex-start; 
-            gap: 1rem; 
-            font-size: 1.05rem; 
-            width: 100%;
-        }
-        
-        .check-icon { 
-            color: var(--orange-600); 
-            width: 24px; 
-            height: 24px; 
-            flex-shrink: 0; 
-            margin-top: 2px; 
-        }
-        
-        .check-text {
-            flex: 1;
-            min-width: 0; /* Permite wrap */
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* --- 8. FOOTER --- */
-        footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; }
+        /* --- 7. FOOTER --- */
+        footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.1); }
         @media(min-width:768px){ footer { padding: 6rem 0 2rem 0; } }
         
         footer h4 { color: white; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9; }
@@ -241,47 +181,45 @@
     <header>
         <div class="container header-grid">
             <div class="logo-area">
-                <a href="index.html" class="logo" title="Volver al inicio">
-                    <div style="background: var(--orange-600); width: 2.4rem; height: 2.4rem; color: white; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-size: 1.1rem;">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-.6-.6-.93-1.4-.93-2.25V4.5c0-.27-.22-.5-.5-.5h-3.75c-.85 0-1.65-.33-2.25-.93L11 1.84"/><path d="m15 12 5-5"/></svg>
-                    </div>
+                <a href="../index.html" class="logo" title="Volver al inicio">
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
                     INCORMADERAS
                 </a>
             </div>
 
             <div class="nav-area md-flex hidden">
                 <nav class="nav-menu">
-                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="../index.html" class="nav-link">Inicio</a>
                     
+                    <div class="dropdown-parent">
+                        <a href="#" class="nav-link" style="color: var(--orange-600);">
+                            Productos <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="cocinas.html" class="dropdown-item">Cocinas Integrales</a>
+                            <a href="closets.html" class="dropdown-item">Clósets y Vestidores</a>
+                            <a href="puertas.html" class="dropdown-item">Puertas de Paso</a>
+                            <a href="zonas-comunes.html" class="dropdown-item">Lockers y Zonas Comunes</a>
+                        </div>
+                    </div>
+
                     <div class="dropdown-parent">
                         <a href="#" class="nav-link">
                             Soluciones <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg>
                         </a>
                         <div class="dropdown-menu">
-                            <a href="soluciones/vivienda-vis.html" class="dropdown-item">Vivienda VIS / VIP <span style="color: var(--orange-600);">→</span></a>
-                            <a href="soluciones/vivienda-premium.html" class="dropdown-item">Vivienda No VIS <span style="color: var(--orange-600);">→</span></a>
+                            <a href="../soluciones/vivienda-vis.html" class="dropdown-item">Vivienda VIS / VIP <span style="color: var(--orange-600);">→</span></a>
+                            <a href="../soluciones/vivienda-premium.html" class="dropdown-item">Vivienda No VIS <span style="color: var(--orange-600);">→</span></a>
                         </div>
                     </div>
 
-                    <div class="dropdown-parent">
-                        <a href="#" class="nav-link">
-                            Productos <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="productos/cocinas.html" class="dropdown-item">Cocinas Integrales</a>
-                            <a href="productos/closets.html" class="dropdown-item">Clósets y Vestidores</a>
-                            <a href="productos/puertas.html" class="dropdown-item">Puertas de Paso</a>
-                            <a href="productos/zonas-comunes.html" class="dropdown-item">Lockers y Zonas Comunes</a>
-                        </div>
-                    </div>
-
-                    <a href="infraestructura.html" class="nav-link" style="color: var(--orange-600);">Planta</a>
-                    <a href="zona-tecnica.html" class="nav-link">Zona Técnica</a>
+                    <a href="../infraestructura.html" class="nav-link">Planta</a>
+                    <a href="../zona-tecnica.html" class="nav-link">Zona Técnica</a>
                 </nav>
             </div>
 
             <div class="cta-area">
-                <a href="contacto.html" class="btn-responsive-cta">Cotizar</a>
+                <a href="../contacto.html" class="btn-responsive-cta">Cotizar</a>
                 <button class="md-hidden" onclick="toggleMenu()" aria-label="Menú móvil" style="background: none; border: none; padding: 0.25rem; cursor: pointer; color: var(--slate-900);">
                     <svg id="menu-icon" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
                     <svg id="close-icon" class="hidden" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
@@ -295,134 +233,69 @@
     </a>
 
     <div id="mobile-menu">
-        <a href="index.html" class="mobile-link">Inicio</a>
-        <a href="soluciones/vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
-        <a href="soluciones/vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
-        <a href="productos/cocinas.html" class="mobile-link">Cocinas</a>
-        <a href="productos/closets.html" class="mobile-link">Clósets</a>
-        <a href="productos/puertas.html" class="mobile-link">Puertas</a>
-        <a href="infraestructura.html" class="mobile-link">Nuestra Planta</a>
-        <a href="zona-tecnica.html" class="mobile-link">Zona Técnica</a>
-        <a href="contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
+        <a href="../index.html" class="mobile-link">Inicio</a>
+        <a href="../soluciones/vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
+        <a href="../soluciones/vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
+        <a href="cocinas.html" class="mobile-link">Cocinas</a>
+        <a href="closets.html" class="mobile-link">Clósets</a>
+        <a href="puertas.html" class="mobile-link">Puertas</a>
+        <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
+        <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
+        <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
     </div>
 
     <main>
-        <section class="hero-infra">
+        <section class="hero-product">
             <div class="container">
-                <h1>Fábrica de Carpintería Industrializada<br>y Tecnología CNC</h1>
-                <p>Taller especializado en el Norte de Bogotá. Optimizamos cada metro cuadrado para garantizar precisión milimétrica y velocidad de respuesta en obra.</p>
+                <h1>Mobiliario para Zonas Comunes<br>y Lockers Inteligentes</h1>
+                <p>Soluciones de carpintería técnica para dotar los espacios compartidos de sus proyectos residenciales: Lobbies, salones sociales y gestión de paquetería.</p>
             </div>
         </section>
 
-        <div class="metrics-bar">
-            <div class="container metrics-grid">
-                <div class="metric-item">
-                    <div class="metric-value">100%</div>
-                    <div class="metric-label">Control de<br>Calidad Directo</div>
-                </div>
-                <div class="metric-item">
-                    <div class="metric-value">ÁGIL</div>
-                    <div class="metric-label">Capacidad de<br>Respuesta Inmediata</div>
-                </div>
-                <div class="metric-item">
-                    <div class="metric-value">CNC</div>
-                    <div class="metric-label">Tecnología de<br>Precisión Numérica</div>
-                </div>
-                <div class="metric-item">
-                    <div class="metric-value">12</div>
-                    <div class="metric-label">Años de<br>Experiencia</div>
-                </div>
-            </div>
-        </div>
-
-        <section style="padding: 4rem 0;">
+        <section class="content-section">
             <div class="container">
                 <div class="text-center" style="margin-bottom: 3rem;">
-                    <h2 style="font-size: 2.2rem; font-weight: 800; color: var(--slate-900); letter-spacing: -0.02em; line-height: 1.2;">Flujo de Producción Industrial</h2>
-                    <p style="color: var(--slate-600); font-size: 1.1rem;">Procesos estandarizados: Del diseño digital a la máquina en tiempo récord.</p>
+                    <h2 style="font-size: 2rem; font-weight: 800; color: var(--slate-900);">Dotación Institucional y Amenities</h2>
+                    <p style="color: var(--slate-600);">Valorice el metro cuadrado vendible con zonas comunes de alto impacto visual y funcional.</p>
                 </div>
 
                 <div class="grid md-grid-3">
-                    <article class="process-card">
-                        <div class="process-img">
-                            <span class="process-step">FASE 01</span>
-                            <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?auto=format&fit=crop&w=600&q=80" alt="Seccionadora horizontal para corte de tableros de melamina" loading="lazy" width="600" height="400">
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80" alt="Lockers inteligentes para edificios residenciales" loading="lazy">
                         </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Corte Optimizado CNC</h3>
-                            <p style="margin-bottom: 1rem; color: var(--slate-600);">Despiece digital y corte con seccionadora de precisión. Nuestro software minimiza el desperdicio de tablero, reduciendo el costo final del proyecto.</p>
-                            <span class="tech-spec">EQUIPO: SECCIONADORA / ROUTER CNC</span>
-                        </div>
+                        <h3 class="feature-title">Lockers de Paquetería</h3>
+                        <p class="feature-desc">Mobiliario especializado para la gestión del e-commerce. Módulos de casilleros diseñados para recibir mensajería, reduciendo la carga operativa en porterías.</p>
                     </article>
 
-                    <article class="process-card">
-                        <div class="process-img">
-                            <span class="process-step">FASE 02</span>
-                            <img src="https://images.unsplash.com/photo-1620311492350-137233267597?auto=format&fit=crop&w=600&q=80" alt="Enchapadora de cantos industrial para tableros RH" loading="lazy" width="600" height="400">
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Recepción tipo lobby con carpintería arquitectónica" loading="lazy">
                         </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Enchape de Cantos Rígidos</h3>
-                            <p style="margin-bottom: 1rem; color: var(--slate-600);">Aplicación de canto PVC con maquinaria automática. Garantizamos un sellado térmico perfecto para asegurar la resistencia a la humedad (RH).</p>
-                            <span class="tech-spec">ACABADO: CANTO 2MM / 0.4MM</span>
-                        </div>
+                        <h3 class="feature-title">Lobbies y Recepciones</h3>
+                        <p class="feature-desc">La primera impresión cuenta. Fabricamos counters de recepción, revestimientos de muro en madera y mobiliario de espera con acabados premium.</p>
                     </article>
 
-                    <article class="process-card">
-                        <div class="process-img">
-                            <span class="process-step">FASE 03</span>
-                            <img src="https://images.unsplash.com/photo-1581166397057-235af2b7c653?auto=format&fit=crop&w=600&q=80" alt="Armado de módulos de cocina en fábrica" loading="lazy" width="600" height="400">
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Mobiliario para coworking y trabajo remoto" loading="lazy">
                         </div>
-                        <div class="process-body">
-                            <h3 class="process-title">Armado y Control Calidad</h3>
-                            <p style="margin-bottom: 1rem; color: var(--slate-600);">Pre-armamos módulos en planta para verificación. Esto asegura que la instalación en obra sea un proceso de ensamble rápido ("Plug & Play").</p>
-                            <span class="tech-spec">CONTROL: INSPECCIÓN VISUAL 100%</span>
-                        </div>
+                        <h3 class="feature-title">Coworking y Gimnasios</h3>
+                        <p class="feature-desc">Carpintería para las nuevas amenidades: Barras de trabajo, mesas compartidas, muebles para equipos de gimnasio y zonas húmedas (RH).</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="trust-section">
-            <div class="container grid md-grid-2 items-center">
-                <div>
-                    <h2 class="trust-title">Compromiso Real con su Cronograma</h2>
-                    <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--slate-600);">
-                        A diferencia de las grandes fábricas impersonales, nuestra estructura eficiente nos permite adaptarnos a los cambios de obra sin burocracia.
-                    </p>
-                    
-                    <ul class="check-list">
-                        <li>
-                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <div class="check-text">
-                                <strong style="color: var(--slate-900);">Trato Directo con Gerencia:</strong>
-                                <span style="display: block; font-size: 0.95rem; opacity: 0.8;">Los socios supervisan la planta y visitan la obra. Las decisiones se toman al instante.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <div class="check-text">
-                                <strong style="color: var(--slate-900);">Insumos Certificados:</strong>
-                                <span style="display: block; font-size: 0.95rem; opacity: 0.8;">Trabajamos exclusivamente con marcas líderes (Arauco, Pelikano, Vesto) para garantizar la disponibilidad de materia prima.</span>
-                            </div>
-                        </li>
-                        <li>
-                            <svg class="check-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                            <div class="check-text">
-                                <strong style="color: var(--slate-900);">Capacidad Real:</strong>
-                                <span style="display: block; font-size: 0.95rem; opacity: 0.8;">Solo nos comprometemos con proyectos que podemos entregar. No sobrevendemos nuestra capacidad instalada.</span>
-                            </div>
-                        </li>
-                    </ul>
-                    
-                    <a href="contacto.html" class="btn btn-primary" style="margin-top: 2rem;">Agendar Visita al Taller</a>
-                </div>
-                
-                <div class="hidden md-flex justify-center">
-                    <img src="https://images.unsplash.com/photo-1611486212557-88be5ff6f941?auto=format&fit=crop&w=600&q=80" style="border-radius: 8px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); width: 90%;" alt="Muestras de calidad en acabados de madera" loading="lazy" width="600" height="800">
-                </div>
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Proyectos de Dotación Especial</h2>
+                <p class="cta-desc">
+                    ¿Tiene un diseño específico para las zonas comunes de su conjunto? Nuestro departamento de ingeniería materializa la visión del arquitecto diseñador.
+                </p>
+                <a href="../contacto.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;">Cotizar Zonas Comunes</a>
             </div>
         </section>
-
     </main>
 
     <footer>
@@ -436,17 +309,17 @@
             </div>
             <div>
                 <h4>Enlaces Rápidos</h4>
-                <a href="index.html">Inicio</a>
-                <a href="infraestructura.html">Nuestra Planta</a>
-                <a href="zona-tecnica.html">Recursos y Fichas</a>
-                <a href="contacto.html">Trabaja con nosotros</a>
+                <a href="../index.html">Inicio</a>
+                <a href="../infraestructura.html">Nuestra Planta</a>
+                <a href="../zona-tecnica.html">Descargas</a>
+                <a href="../contacto.html">Trabaja con nosotros</a>
             </div>
             <div>
                 <h4>Productos</h4>
-                <a href="productos/cocinas.html">Cocinas Integrales</a>
-                <a href="productos/closets.html">Clósets</a>
-                <a href="productos/puertas.html">Puertas</a>
-                <a href="productos/zonas-comunes.html">Zonas Comunes</a>
+                <a href="cocinas.html">Cocinas Integrales</a>
+                <a href="closets.html">Clósets</a>
+                <a href="puertas.html">Puertas</a>
+                <a href="zonas-comunes.html">Zonas Comunes</a>
             </div>
             <div>
                 <h4>Contacto B2B</h4>
