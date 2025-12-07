@@ -45,7 +45,7 @@
             .md-hidden { display: none; }
         }
 
-        /* --- 3. HEADER RESPONSIVO (Patrón Ganador) --- */
+        /* --- 3. HEADER --- */
         header { 
             position: fixed; top: 0; width: 100%; 
             background: rgba(255,255,255,0.98); 
@@ -58,20 +58,8 @@
         }
         @media (min-width: 768px) { header { height: 96px; } }
 
-        .header-grid {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            height: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .header-grid {
-                display: grid;
-                grid-template-columns: 1fr auto 1fr; 
-                justify-content: initial;
-            }
-        }
+        .header-grid { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        @media (min-width: 768px) { .header-grid { display: grid; grid-template-columns: 1fr auto 1fr; justify-content: initial; } }
         
         .logo-area { justify-self: start; }
         .logo { 
@@ -126,13 +114,16 @@
 
         /* --- 4. HERO CONTACT --- */
         .hero-contact { 
-            position: relative; height: 50vh; min-height: 400px;
+            position: relative; 
+            height: 90vh;
+            min-height: 600px;
             background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
             padding-top: 80px;
         }
+        @media (max-width: 768px) { .hero-contact { height: 60vh; min-height: 400px; } }
         @media (min-width: 768px) { .hero-contact { padding-top: 96px; } }
 
         .page-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; line-height: 1.2; }
@@ -148,28 +139,23 @@
         .info-block { margin-bottom: 2.5rem; }
         .info-label { color: var(--orange-600); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; display: block; }
         
-        /* Solución para textos largos (email) en móvil */
-        .info-text { 
-            font-size: 1.1rem; 
-            color: var(--slate-800); 
-            font-weight: 500; 
-            word-wrap: break-word; 
-            overflow-wrap: break-word; 
-        }
+        .info-text { font-size: 1.1rem; color: var(--slate-800); font-weight: 500; word-wrap: break-word; overflow-wrap: break-word; }
+        .info-text a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .info-text a:hover { color: var(--orange-600); }
         
         .info-sub { font-size: 0.95rem; color: var(--slate-600); margin-top: 0.25rem; }
 
-        .form-panel { 
-            background: white; 
-            padding: 1.5rem; 
-            border: 1px solid var(--slate-200); 
-            border-radius: 8px; 
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+        .visit-alert {
+            background-color: #fff7ed; border-left: 4px solid var(--orange-600); padding: 1rem; margin-top: 0.5rem; border-radius: 4px;
         }
+        .visit-alert p { color: var(--orange-700); font-size: 0.9rem; font-weight: 600; margin: 0; line-height: 1.4; }
+
+        .form-panel { background: white; padding: 1.5rem; border: 1px solid var(--slate-200); border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
         @media(min-width:768px){ .form-panel { padding: 2.5rem; } }
 
         .form-group { margin-bottom: 1.5rem; }
         .form-label { display: block; font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--slate-700); }
+        
         .form-input, .form-select, .form-textarea { 
             width: 100%; padding: 0.8rem; border: 1px solid var(--slate-300); 
             border-radius: 4px; font-family: inherit; font-size: 1rem; 
@@ -179,21 +165,32 @@
             outline: none; border-color: var(--orange-600); background: white; 
             box-shadow: 0 0 0 3px rgba(234,88,12,0.1); 
         }
+        .form-textarea { min-height: 120px; resize: vertical; }
         
-        .file-drop { border: 2px dashed var(--slate-300); padding: 2rem; text-align: center; border-radius: 4px; cursor: pointer; transition: 0.2s; background: var(--slate-50); }
+        .file-drop { 
+            border: 2px dashed var(--slate-300); padding: 2rem; text-align: center; 
+            border-radius: 4px; cursor: pointer; transition: 0.2s; background: var(--slate-50); 
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
         .file-drop:hover { border-color: var(--orange-600); background: #fff7ed; }
+        .file-drop.has-file { border-color: #22c55e; background: #f0fdf4; border-style: solid; }
+
+        .status-message { display: none; padding: 2rem; border-radius: 8px; text-align: center; margin-bottom: 2rem; }
+        .success-message { background-color: #f0fdf4; border: 1px solid #86efac; color: #166534; }
+        .status-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem; }
+        .status-icon svg { width: 3rem; height: 3rem; margin-bottom: 1rem; }
 
         /* --- 6. MAPA --- */
         .map-section { width: 100%; height: 450px; background: var(--slate-200); margin-top: 3rem; }
         .map-section iframe { width: 100%; height: 100%; display: block; border: none; }
 
         /* --- 7. FOOTER --- */
-        footer { background: var(--slate-900); color: var(--slate-300); padding: 4rem 0 2rem 0; font-size: 0.9rem; }
+        footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; }
         @media(min-width:768px){ footer { padding: 6rem 0 2rem 0; } }
         
-        footer h4 { color: white; margin-bottom: 1.25rem; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.05em; }
-        footer a { color: var(--slate-300); text-decoration: none; display: block; margin-bottom: 0.75rem; transition: 0.2s; }
-        footer a:hover { color: var(--orange-600); }
+        footer h4 { color: white; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9; }
+        footer a { color: #ffffff; opacity: 0.7; text-decoration: none; display: block; margin-bottom: 0.75rem; transition: 0.2s; }
+        footer a:hover { opacity: 1; color: var(--orange-600); padding-left: 4px; }
 
         /* Mobile Menu */
         #mobile-menu { display: none; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; padding: 2rem; border-top: 1px solid var(--slate-200); z-index: 999; overflow-y: auto; }
@@ -264,6 +261,7 @@
         <a href="productos/cocinas.html" class="mobile-link">Cocinas</a>
         <a href="productos/closets.html" class="mobile-link">Clósets</a>
         <a href="productos/puertas.html" class="mobile-link">Puertas</a>
+        <a href="productos/zonas-comunes.html" class="mobile-link">Lockers y Zonas Comunes</a>
         <a href="infraestructura.html" class="mobile-link">Nuestra Planta</a>
         <a href="zona-tecnica.html" class="mobile-link">Zona Técnica</a>
         <a href="contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
@@ -286,135 +284,308 @@
                         <span class="info-label">Ubicación Industrial</span>
                         <div class="info-text">Calle 163 # 7d - 17</div>
                         <div class="info-sub">Bogotá D.C., Colombia</div>
+                        
+                        <div class="visit-alert">
+                            <p>⚠ <strong>Importante:</strong> Para visitas a planta es indispensable agendar cita previa vía WhatsApp. No se atiende sin cita.</p>
+                        </div>
                     </div>
 
                     <div class="info-block">
                         <span class="info-label">Línea Corporativa</span>
-                        <div class="info-text">+57 324 440 3147</div>
+                        <div class="info-text">
+                            <a href="tel:+573244403147" style="text-decoration: underline; color: var(--slate-900);">+57 324 440 3147</a>
+                        </div>
                         <div class="info-sub">Consultas sobre estado de licitaciones (Lun-Vie 7am - 5pm)</div>
                     </div>
 
                     <div class="info-block">
                         <span class="info-label">Email para Planos y Cuadros de Cantidades</span>
-                        <div class="info-text">licitaciones@incormaderas.com</div>
-                    </div>
-
-                    <div style="background: #fff7ed; padding: 1.5rem; border-left: 4px solid var(--orange-600); border-radius: 4px; margin-top: 3rem;">
-                        <strong style="color: var(--orange-700); display: block; margin-bottom: 0.5rem;">¿Es Proveedor de Materia Prima?</strong>
-                        <p style="font-size: 0.9rem; color: var(--slate-700);">Por favor no utilice el formulario de cotización de proyectos. Envíe su portafolio directamente a compras@incormaderas.com</p>
+                        <div class="info-text">admin@incormaderas.com</div>
                     </div>
                 </div>
 
                 <div class="form-panel">
-                    <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Formulario de Pre-calificación</h3>
-                    <p style="color: var(--slate-600); margin-bottom: 2rem; font-size: 0.9rem;">Permítanos realizar la ingeniería de valor de su proyecto.</p>
-                    
-                    <form onsubmit="event.preventDefault(); alert('Solicitud recibida por el depto. de ingeniería. Pronto le contactaremos.');">
-                        <div class="form-group">
-                            <label class="form-label">Constructora / Razón Social *</label>
-                            <input type="text" class="form-input" required placeholder="Ej: Constructora Bolívar, Amarilo...">
+                    <div id="success-message" class="status-message success-message">
+                        <div class="status-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
                         </div>
+                        <h4 class="status-title">¡Solicitud Enviada Correctamente!</h4>
+                        <p style="font-size: 0.95rem; margin-bottom: 1rem;">Hemos recibido su información. Nuestro departamento de ingeniería revisará los datos y le contactará a la brevedad.</p>
+                        <button onclick="location.reload()" class="btn-responsive-cta" style="border-color: #166534; color: #166534;">Enviar otra solicitud</button>
+                    </div>
 
-                        <div class="grid md-grid-2" style="gap: 1rem;">
+                    <div id="form-container">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Formulario de Pre-calificación</h3>
+                        <p style="color: var(--slate-600); margin-bottom: 2rem; font-size: 0.9rem;">Permítanos realizar la ingeniería de valor de su proyecto.</p>
+                        
+                        <form id="licitacionForm" method="POST" onsubmit="return handleSubmit(event);">
+                            
                             <div class="form-group">
-                                <label class="form-label">Contacto Licitaciones *</label>
-                                <input type="text" class="form-input" required>
+                                <label class="form-label">Constructora / Razón Social *</label>
+                                <input type="text" name="empresa" class="form-input" required placeholder="Ej: Constructora Bolívar, Amarilo...">
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Email Corporativo *</label>
-                                <input type="email" class="form-input" required>
-                            </div>
-                        </div>
 
-                        <div class="grid md-grid-2" style="gap: 1rem;">
-                            <div class="form-group">
-                                <label class="form-label">Segmento del Proyecto *</label>
-                                <select class="form-select" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="vis">Vivienda VIS / VIP</option>
-                                    <option value="novis">Vivienda No VIS (Premium)</option>
-                                    <option value="institucional">Institucional / Dotación</option>
-                                </select>
+                            <div class="grid md-grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label">Contacto Licitaciones *</label>
+                                    <input type="text" name="nombre" class="form-input" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Email Corporativo *</label>
+                                    <input type="email" name="email" class="form-input" required>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Fase Actual *</label>
-                                <select class="form-select" required>
-                                    <option value="">Seleccione...</option>
-                                    <option value="presupuesto">Presupuesto / Factibilidad</option>
-                                    <option value="licitacion">Licitación en Curso</option>
-                                    <option value="contratacion">Cierre de Contratación</option>
-                                </select>
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Cargar Planos / Especificaciones</label>
-                            <div class="file-drop" onclick="document.getElementById('file').click()">
-                                <input type="file" id="file" class="hidden">
-                                <svg style="width: 2rem; height: 2rem; color: var(--slate-300); margin-bottom: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
-                                <div style="font-weight: 700; color: var(--orange-600); font-size: 0.9rem;">Clic para adjuntar archivos</div>
-                                <div style="font-size: 0.8rem; color: var(--slate-500);">Formatos admitidos: PDF, DWG, XLSX</div>
+                            <div class="grid md-grid-2" style="gap: 1rem;">
+                                <div class="form-group">
+                                    <label class="form-label">Segmento del Proyecto *</label>
+                                    <select name="segmento" class="form-select" required>
+                                        <option value="">Seleccione...</option>
+                                        <option value="vis">Vivienda VIS / VIP</option>
+                                        <option value="novis">Vivienda No VIS (Premium)</option>
+                                        <option value="institucional">Institucional / Dotación</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Fase Actual *</label>
+                                    <select name="fase" class="form-select" required>
+                                        <option value="">Seleccione...</option>
+                                        <option value="presupuesto">Presupuesto / Factibilidad</option>
+                                        <option value="licitacion">Licitación en Curso</option>
+                                        <option value="contratacion">Cierre de Contratación</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <button type="submit" class="btn btn-primary">Enviar Requerimiento de Licitación</button>
-                        <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 1rem; text-align: center;">Sus datos serán tratados confidencialmente para fines de cotización.</p>
+                            <div class="form-group">
+                                <label class="form-label">Mensaje / Detalles Adicionales</label>
+                                <textarea name="mensaje" class="form-textarea" placeholder="Describa brevemente los alcances..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Cargar Planos / Especificaciones (Múltiples Archivos)</label>
+                                <input type="file" id="file" name="attachment" class="hidden" multiple accept=".pdf, .dwg, .rvt, .jpg, .png, .jpeg, .xlsx, .xls, .zip, .rar">
+                                
+                                <div class="file-drop" id="drop-zone" onclick="document.getElementById('file').click()">
+<svg style="width: 2rem; height: 2rem; color: var(--slate-300); margin-bottom: 0.5rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg>
+<div id="file-label" style="font-weight: 700; color: var(--orange-600); font-size: 0.9rem;">Clic para adjuntar archivos</div>
+<div style="font-size: 0.8rem; color: var(--slate-500);">Formatos: PDF, DWG, RVT, Excel (Máx 25MB por archivo)</div>
+</div>
+</div>
+                        <button type="submit" class="btn btn-primary" id="btnSubmit">Enviar Requerimiento</button>
+                        <p style="font-size: 0.75rem; color: var(--slate-500); margin-top: 1rem; text-align: center;">Sus datos serán tratados confidencialmente.</p>
                     </form>
                 </div>
             </div>
-        </section>
-
-        <section class="map-section">
-            <iframe src="https://maps.google.com/maps?q=Calle%20163%20%23%207d%20-%2017%2C%20Bogot%C3%A1&t=&z=15&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Fábrica Incormaderas Bogotá"></iframe>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container grid md-grid-4">
-            <div>
-                <h4 class="flex items-center gap-2">
-                    <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
-                    INCORMADERAS
-                </h4>
-                <p style="color: var(--slate-300); opacity: 0.8;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
-            </div>
-            <div>
-                <h4>Enlaces Rápidos</h4>
-                <a href="index.html">Inicio</a>
-                <a href="infraestructura.html">Nuestra Planta</a>
-                <a href="zona-tecnica.html">Descargas</a>
-                <a href="contacto.html">Trabaja con nosotros</a>
-            </div>
-            <div>
-                <h4>Productos</h4>
-                <a href="productos/cocinas.html">Cocinas Integrales</a>
-                <a href="productos/closets.html">Clósets</a>
-                <a href="productos/puertas.html">Puertas</a>
-                <a href="productos/zonas-comunes.html">Institucional</a>
-            </div>
-            <div>
-                <h4>Contacto B2B</h4>
-                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
-                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
-                <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
-            </div>
         </div>
-        <div class="container text-center" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
-            © 2025 Incormaderas S.A.S. Todos los derechos reservados.
-        </div>
-    </footer>
+    </section>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-            
-            menu.classList.toggle('open');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
+    <section class="map-section">
+        <iframe src="https://maps.google.com/maps?q=Calle%20163%20%23%207d%20-%2017%2C%20Bogot%C3%A1&t=&z=15&ie=UTF8&iwloc=&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación Fábrica Incormaderas Bogotá"></iframe>
+    </section>
+</main>
+
+<footer>
+    <div class="container grid md-grid-4">
+        <div>
+            <h4 class="flex items-center gap-2">
+                <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
+                NCORMADERAS
+            </h4>
+            <p style="color: var(--slate-300); opacity: 0.8;">Ingeniería, fabricación e instalación de mobiliario arquitectónico.</p>
+        </div>
+        <div>
+            <h4>Enlaces Rápidos</h4>
+            <a href="index.html">Inicio</a>
+            <a href="infraestructura.html">Nuestra Planta</a>
+            <a href="zona-tecnica.html">Descargas</a>
+            <a href="contacto.html">Trabaja con nosotros</a>
+        </div>
+        <div>
+            <h4>Productos</h4>
+            <a href="productos/cocinas.html">Cocinas Integrales</a>
+            <a href="productos/closets.html">Clósets</a>
+            <a href="productos/puertas.html">Puertas</a>
+            <a href="productos/zonas-comunes.html">Lockers y Zonas Comunes</a>
+        </div>
+        <div>
+            <h4>Contacto B2B</h4>
+            <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
+            <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
+            <p style="color: white; opacity: 0.8;">admin@incormaderas.com</p>
+        </div>
+    </div>
+    <div class="container text-center" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
+        © 2025 Incormaderas S.A.S. Todos los derechos reservados.
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        menu.classList.toggle('open');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+    }
+
+    // Feedback Visual de Archivos
+    const fileInput = document.getElementById('file');
+    const fileLabel = document.getElementById('file-label');
+    const dropZone = document.getElementById('drop-zone');
+
+    fileInput.addEventListener('change', function() {
+        if (fileInput.files.length > 0) {
+            if (fileInput.files.length === 1) {
+                fileLabel.textContent = "1 archivo seleccionado: " + fileInput.files[0].name;
+            } else {
+                fileLabel.textContent = fileInput.files.length + " archivos seleccionados";
+            }
+            dropZone.classList.add('has-file');
+            dropZone.style.borderColor = "#22c55e";
+            dropZone.style.backgroundColor = "#f0fdf4";
+        } else {
+            fileLabel.textContent = "Clic para adjuntar archivos";
+            dropZone.classList.remove('has-file');
+            dropZone.style.backgroundColor = "var(--slate-50)";
+            dropZone.style.borderColor = "var(--slate-300)";
         }
-    </script>
+    });
 
+    // Manejo del envío con archivos adjuntos
+    async function handleSubmit(event) {
+        event.preventDefault();
+        
+        const btn = document.getElementById('btnSubmit');
+        btn.innerText = 'Enviando...';
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+
+        const form = document.getElementById('licitacionForm');
+        const formData = new FormData(form);
+
+        // Si hay archivos, convertirlos a base64
+        const files = fileInput.files;
+        const filesData = [];
+        
+        if (files.length > 0) {
+            btn.innerText = 'Procesando archivos...';
+            
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                
+                // Validar tamaño (25MB por archivo)
+                if (file.size > 25 * 1024 * 1024) {
+                    alert(`El archivo "${file.name}" es muy grande (máx 25MB). Por favor use archivos más pequeños.`);
+                    btn.innerText = 'Enviar Requerimiento';
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                }
+                
+                console.log(`Procesando archivo ${i + 1}/${files.length}: ${file.name} (${formatBytes(file.size)})`);
+                
+                try {
+                    const base64 = await fileToBase64(file);
+                    filesData.push({
+                        name: file.name,
+                        type: file.type || 'application/octet-stream',
+                        data: base64
+                    });
+                    console.log(`✓ Archivo procesado: ${file.name}`);
+                } catch (error) {
+                    console.error(`Error procesando ${file.name}:`, error);
+                    alert(`Error al procesar el archivo "${file.name}". Intente de nuevo.`);
+                    btn.innerText = 'Enviar Requerimiento';
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    return;
+                }
+            }
+            
+            console.log(`Total de archivos procesados: ${filesData.length}`);
+        }
+
+        btn.innerText = 'Enviando formulario...';
+
+        // Preparar datos para enviar
+        const data = {
+            empresa: formData.get('empresa'),
+            nombre: formData.get('nombre'),
+            email: formData.get('email'),
+            segmento: formData.get('segmento'),
+            fase: formData.get('fase'),
+            mensaje: formData.get('mensaje') || '',
+            archivos: filesData
+        };
+
+        console.log('Enviando datos:', {
+            ...data,
+            archivos: data.archivos.map(a => ({ name: a.name, type: a.type, size: a.data.length }))
+        });
+
+        try {
+            // URL ACTUALIZADA AQUÍ
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyscWTzI6j11YRgZkE_bZgttDsmdEQj1EqK9lpSUqAXP9Cv_u4SJ74FrYmdFWY4i44/exec';
+            
+            const response = await fetch(scriptURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            });
+
+            console.log('Formulario enviado exitosamente');
+            
+            // Con mode: 'no-cors' asumimos éxito si no hay error
+            setTimeout(() => {
+                mostrarExito();
+            }, 1500);
+
+        } catch (error) {
+            console.error('Error enviando formulario:', error);
+            alert('Hubo un error al enviar el formulario. Por favor intente nuevamente o contacte por WhatsApp.');
+            btn.innerText = 'Enviar Requerimiento';
+            btn.disabled = false;
+            btn.style.opacity = '1';
+        }
+    }
+
+    // Convertir archivo a base64
+    function fileToBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                const base64 = reader.result.split(',')[1];
+                resolve(base64);
+            };
+            reader.onerror = error => reject(error);
+        });
+    }
+
+    // Formatear bytes para mostrar
+    function formatBytes(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return Math.round(bytes / Math.pow(k, i) * 100) / 100 + ' ' + sizes[i];
+    }
+
+    // Mostrar mensaje de éxito
+    function mostrarExito() {
+        document.getElementById('form-container').style.display = 'none';
+        const successMsg = document.getElementById('success-message');
+        successMsg.style.display = 'block';
+        successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+</script>
 </body>
 </html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Mobiliario para Zonas Comunes y Lockers | Incormaderas</title>
+    
+    <meta name="description" content="Dotación de carpintería para zonas comunes: Lockers inteligentes para paquetería, mobiliario para lobbies, coworking y gimnasios en proyectos de vivienda.">
+
+    <link rel="canonical" href="https://www.incormaderas.com/productos/zonas-comunes.html" />
+    <link rel="icon" type="image/webp" href="https://carpinteriaarquitectonica.com.co/assets/favicon-incormaderas.webp">
+    
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80" fetchpriority="high">
+
+    <style>
+        /* --- 1. VARIABLES & RESET --- */
+        :root {
+            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1;
+            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+            --orange-600: #ea580c; --orange-700: #c2410c; --white: #ffffff;
+            --whatsapp-green: #25D366;
+            --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+        /* --- 2. UTILITIES --- */
+        .container { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 1.5rem; }
+        .grid { display: grid; gap: 2rem; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .items-center { align-items: center; }
+        .text-center { text-align: center; }
+        .w-full { width: 100%; }
+        .hidden { display: none; }
+        .uppercase { text-transform: uppercase; }
+        .font-bold { font-weight: 700; }
+        
+        @media (min-width: 768px) {
+            .container { padding: 0 2.5rem; }
+            .md-grid-2 { grid-template-columns: 1fr 1fr; }
+            .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .md-grid-4 { grid-template-columns: repeat(4, 1fr); }
+            .md-flex { display: flex; }
+            .md-hidden { display: none; }
+        }
+
+        /* --- 3. HEADER RESPONSIVO --- */
+        header { 
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(255,255,255,0.98); 
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8); 
+            z-index: 1000; 
+            height: 80px; 
+            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
+            transition: height 0.3s;
+        }
+        @media (min-width: 768px) { header { height: 96px; } }
+
+        .header-grid {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            height: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .header-grid {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr; 
+                justify-content: initial;
+            }
+        }
+        
+        .logo-area { justify-self: start; }
+        .logo { 
+            font-weight: 900; font-size: 1.1rem; letter-spacing: -0.03em; 
+            display: flex; align-items: center; gap: 0.5rem; 
+            text-decoration: none; color: var(--slate-900); 
+            white-space: nowrap;
+        }
+        @media (min-width: 768px) { .logo { font-size: 1.5rem; gap: 0.75rem; } }
+
+        .nav-area { justify-self: center; }
+        .nav-menu { display: flex; gap: 2.5rem; align-items: center; list-style: none; margin: 0; padding: 0; }
+        
+        .nav-link { font-weight: 600; font-size: 0.95rem; color: var(--slate-600); padding: 0.5rem 0; transition: color 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; position: relative; }
+        .nav-link:hover { color: var(--orange-600); }
+        
+        .dropdown-parent { position: relative; height: 96px; display: flex; align-items: center; cursor: pointer; }
+        .dropdown-menu { position: absolute; top: 96px; left: 50%; transform: translateX(-50%) translateY(10px); background: white; border: 1px solid var(--slate-200); border-top: 3px solid var(--orange-600); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); min-width: 240px; display: none; flex-direction: column; padding: 0.75rem 0; border-radius: 0 0 6px 6px; opacity: 0; transition: all 0.2s; }
+        .dropdown-parent:hover .dropdown-menu { display: flex; opacity: 1; transform: translateX(-50%) translateY(0); }
+        .dropdown-item { padding: 0.85rem 1.5rem; color: var(--slate-600); text-decoration: none; font-size: 0.9rem; display: flex; justify-content: space-between; transition: 0.2s; }
+        .dropdown-item:hover { background: var(--slate-50); color: var(--orange-600); padding-left: 1.75rem; }
+
+        .cta-area { justify-self: end; display: flex; align-items: center; gap: 0.75rem; }
+
+        .btn-responsive-cta {
+            font-size: 0.8rem; font-weight: 700; color: var(--orange-600);
+            border: 1px solid var(--orange-600); padding: 0.4rem 0.9rem;
+            border-radius: 50px; text-decoration: none; transition: all 0.2s;
+            background: transparent; white-space: nowrap;
+        }
+        .btn-responsive-cta:hover { background: var(--orange-600); color: white; }
+        
+        @media (min-width: 768px) {
+            .btn-responsive-cta {
+                background: var(--orange-600); color: white; font-size: 0.9rem;
+                padding: 0.85rem 2rem; border-radius: 4px; border: none;
+                box-shadow: 0 4px 12px rgba(234,88,12,0.25);
+            }
+            .btn-responsive-cta:hover { background: var(--orange-700); transform: translateY(-1px); color: white; }
+        }
+
+        .btn { padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.2s; }
+        .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(234,88,12,0.25); }
+        .btn-primary:hover { background: var(--orange-700); transform: translateY(-1px); }
+
+        /* --- WHATSAPP FLOTANTE --- */
+        .btn-whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5); z-index: 2000; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none;
+        }
+        .btn-whatsapp-float:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6); }
+        .btn-whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+        /* --- 4. HERO PRODUCT --- */
+        .hero-product { 
+            position: relative; height: 60vh; min-height: 450px; 
+            background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; color: white;
+            padding-top: 80px;
+        }
+        @media (min-width: 768px) { .hero-product { padding-top: 96px; } }
+
+        .hero-product h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+        .hero-product p { font-size: 1.25rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
+
+        /* --- 5. CONTENT SECTIONS --- */
+        .content-section { padding: 4rem 0; }
+        @media(min-width:768px){ .content-section { padding: 6rem 0; } }
+
+        .feature-card { background: white; padding: 2rem; border-radius: 12px; border: 1px solid var(--slate-200); transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
+        .feature-card:hover { border-color: var(--orange-600); box-shadow: 0 20px 40px -5px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        
+        .feature-img { height: 240px; margin: -2rem -2rem 1.5rem -2rem; overflow: hidden; background: var(--slate-100); }
+        .feature-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .feature-card:hover .feature-img img { transform: scale(1.05); }
+
+        .feature-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--slate-900); }
+        .feature-desc { color: var(--slate-600); font-size: 0.95rem; margin-bottom: 1.5rem; line-height: 1.6; }
+
+        /* --- 6. CTA --- */
+        .cta-section { background: var(--slate-800); color: white; padding: 4rem 0; text-align: center; }
+        @media(min-width:768px){ .cta-section { padding: 6rem 0; } }
+
+        .cta-title { font-size: 2rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .cta-desc { color: var(--slate-300); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1.1rem; }
+
+        /* --- 7. FOOTER --- */
+        footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media(min-width:768px){ footer { padding: 6rem 0 2rem 0; } }
+        
+        footer h4 { color: white; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9; }
+        footer a { color: #ffffff; opacity: 0.7; text-decoration: none; display: block; margin-bottom: 0.75rem; transition: 0.2s; }
+        footer a:hover { opacity: 1; color: var(--orange-600); padding-left: 4px; }
+
+        /* Mobile Menu */
+        #mobile-menu { display: none; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; padding: 2rem; border-top: 1px solid var(--slate-200); z-index: 999; overflow-y: auto; }
+        #mobile-menu.open { display: flex; }
+        .mobile-link { font-size: 1.2rem; font-weight: 700; color: var(--slate-800); padding: 1.2rem 0; border-bottom: 1px solid var(--slate-100); text-decoration: none; display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-grid">
+            <div class="logo-area">
+                <a href="../index.html" class="logo" title="Volver al inicio">
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
+                    INCORMADERAS
+                </a>
+            </div>
+
+            <div class="nav-area md-flex hidden">
+                <nav class="nav-menu">
+                    <a href="../index.html" class="nav-link">Inicio</a>
+                    
+                    <div class="dropdown-parent">
+                        <a href="#" class="nav-link" style="color: var(--orange-600);">
+                            Productos <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="cocinas.html" class="dropdown-item">Cocinas Integrales</a>
+                            <a href="closets.html" class="dropdown-item">Clósets y Vestidores</a>
+                            <a href="puertas.html" class="dropdown-item">Puertas de Paso</a>
+                            <a href="zonas-comunes.html" class="dropdown-item">Lockers y Zonas Comunes</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-parent">
+                        <a href="#" class="nav-link">
+                            Soluciones <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../soluciones/vivienda-vis.html" class="dropdown-item">Vivienda VIS / VIP <span style="color: var(--orange-600);">→</span></a>
+                            <a href="../soluciones/vivienda-premium.html" class="dropdown-item">Vivienda No VIS <span style="color: var(--orange-600);">→</span></a>
+                        </div>
+                    </div>
+
+                    <a href="../infraestructura.html" class="nav-link">Planta</a>
+                    <a href="../zona-tecnica.html" class="nav-link">Zona Técnica</a>
+                </nav>
+            </div>
+
+            <div class="cta-area">
+                <a href="../contacto.html" class="btn-responsive-cta">Cotizar</a>
+                <button class="md-hidden" onclick="toggleMenu()" aria-label="Menú móvil" style="background: none; border: none; padding: 0.25rem; cursor: pointer; color: var(--slate-900);">
+                    <svg id="menu-icon" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="close-icon" class="hidden" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <a href="https://wa.me/573244403147" class="btn-whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <div id="mobile-menu">
+        <a href="../index.html" class="mobile-link">Inicio</a>
+        <a href="../soluciones/vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
+        <a href="../soluciones/vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
+        <a href="cocinas.html" class="mobile-link">Cocinas</a>
+        <a href="closets.html" class="mobile-link">Clósets</a>
+        <a href="puertas.html" class="mobile-link">Puertas</a>
+        <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
+        <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
+        <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
+    </div>
+
+    <main>
+        <section class="hero-product">
+            <div class="container">
+                <h1>Mobiliario para Zonas Comunes<br>y Lockers Inteligentes</h1>
+                <p>Soluciones de carpintería técnica para dotar los espacios compartidos de sus proyectos residenciales: Lobbies, salones sociales y gestión de paquetería.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2 style="font-size: 2rem; font-weight: 800; color: var(--slate-900);">Dotación Institucional y Amenities</h2>
+                    <p style="color: var(--slate-600);">Valorice el metro cuadrado vendible con zonas comunes de alto impacto visual y funcional.</p>
+                </div>
+
+                <div class="grid md-grid-3">
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=600&q=80" alt="Lockers inteligentes para edificios residenciales" loading="lazy">
+                        </div>
+                        <h3 class="feature-title">Lockers de Paquetería</h3>
+                        <p class="feature-desc">Mobiliario especializado para la gestión del e-commerce. Módulos de casilleros diseñados para recibir mensajería, reduciendo la carga operativa en porterías.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Recepción tipo lobby con carpintería arquitectónica" loading="lazy">
+                        </div>
+                        <h3 class="feature-title">Lobbies y Recepciones</h3>
+                        <p class="feature-desc">La primera impresión cuenta. Fabricamos counters de recepción, revestimientos de muro en madera y mobiliario de espera con acabados premium.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-img">
+                            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80" alt="Mobiliario para coworking y trabajo remoto" loading="lazy">
+                        </div>
+                        <h3 class="feature-title">Coworking y Gimnasios</h3>
+                        <p class="feature-desc">Carpintería para las nuevas amenidades: Barras de trabajo, mesas compartidas, muebles para equipos de gimnasio y zonas húmedas (RH).</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Proyectos de Dotación Especial</h2>
+                <p class="cta-desc">
+                    ¿Tiene un diseño específico para las zonas comunes de su conjunto? Nuestro departamento de ingeniería materializa la visión del arquitecto diseñador.
+                </p>
+                <a href="../contacto.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;">Cotizar Zonas Comunes</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container grid md-grid-4">
+            <div>
+                <h4 class="flex items-center gap-2">
+                    <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
+                    INCORMADERAS
+                </h4>
+                <p style="color: var(--slate-300); opacity: 0.8;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
+            </div>
+            <div>
+                <h4>Enlaces Rápidos</h4>
+                <a href="../index.html">Inicio</a>
+                <a href="../infraestructura.html">Nuestra Planta</a>
+                <a href="../zona-tecnica.html">Descargas</a>
+                <a href="../contacto.html">Trabaja con nosotros</a>
+            </div>
+            <div>
+                <h4>Productos</h4>
+                <a href="cocinas.html">Cocinas Integrales</a>
+                <a href="closets.html">Clósets</a>
+                <a href="puertas.html">Puertas</a>
+                <a href="zonas-comunes.html">Zonas Comunes</a>
+            </div>
+            <div>
+                <h4>Contacto B2B</h4>
+                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
+                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
+                <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
+            </div>
+        </div>
+        <div class="container text-center" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
+            © 2025 Incormaderas S.A.S. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            menu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
