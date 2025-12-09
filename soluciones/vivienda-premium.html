@@ -5,239 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Carpintería Premium para Proyectos de Vivienda No VIS en Bogotá | Incormaderas</title>
-    
     <meta name="description" content="Fabricación de carpintería arquitectónica de alta gama para proyectos No VIS. Cocinas texturizadas, herrajes de cierre lento y diseños que valorizan el metro cuadrado.">
 
+    <link rel="preload" 
+          as="image" 
+          href="https://www.carpinteriaarquitectonica.com.co/assets/diseno-cocina-integral-lujo-acabado-alto-brillo.webp"
+          fetchpriority="high">
+
+    <link rel="preconnect" href="https://www.carpinteriaarquitectonica.com.co" crossorigin>
     <link rel="canonical" href="https://www.incormaderas.com/soluciones/vivienda-premium.html" />
     <link rel="icon" type="image/webp" href="https://carpinteriaarquitectonica.com.co/assets/favicon-incormaderas.webp">
-    
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" fetchpriority="high">
 
     <style>
-        /* --- 1. VARIABLES & RESET --- */
         :root {
-            --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0; --slate-300: #cbd5e1;
-            --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
-            --orange-600: #ea580c; --orange-700: #c2410c; --white: #ffffff;
-            --whatsapp-green: #25D366;
+            --slate-50: #f8fafc; --slate-200: #e2e8f0; --slate-600: #475569; --slate-800: #1e293b; --slate-900: #0f172a;
+            --orange-600: #c2410c; --orange-700: #b91c1c; --orange-light: #fb923c;
+            --white: #ffffff; --whatsapp-green: #25D366;
             --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        body { font-family: var(--font-main); background-color: var(--slate-50); color: var(--slate-800); line-height: 1.6; overflow-x: hidden; }
+        img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 
-        /* --- 2. UTILITIES --- */
-        .container { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 1.5rem; }
-        .grid { display: grid; gap: 2rem; }
-        .flex { display: flex; }
-        .justify-between { justify-content: space-between; }
-        .justify-center { justify-content: center; }
-        .items-center { align-items: center; }
-        .text-center { text-align: center; }
-        .w-full { width: 100%; }
-        .hidden { display: none; }
-        .uppercase { text-transform: uppercase; }
-        .font-bold { font-weight: 700; }
-        
-        @media (min-width: 768px) {
-            .container { padding: 0 2.5rem; }
-            .md-grid-2 { grid-template-columns: 1fr 1fr; }
-            .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
-            .md-grid-4 { grid-template-columns: repeat(4, 1fr); }
-            .md-flex { display: flex; }
-            .md-hidden { display: none; }
-        }
-
-        /* --- 3. HEADER (Sincronizado con tu versión funcional) --- */
+        /* Header */
         header { 
             position: fixed; top: 0; width: 100%; 
-            background: rgba(255,255,255,0.98); 
-            backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(226, 232, 240, 0.8); 
-            z-index: 1000; 
-            height: 80px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.03);
-            transition: height 0.3s;
+            z-index: 1000; height: 80px;
         }
         @media (min-width: 768px) { header { height: 96px; } }
 
-        .header-grid {
-            display: flex;
-            justify-content: space-between; 
-            align-items: center;
-            height: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .header-grid {
-                display: grid;
-                grid-template-columns: 1fr auto 1fr; 
-                justify-content: initial;
-            }
-        }
+        .container { width: 100%; max-width: 1360px; margin: 0 auto; padding: 0 1.5rem; }
+        @media (min-width: 768px) { .container { padding: 0 2.5rem; } }
         
-        .logo-area { justify-self: start; }
-        .logo { 
-            font-weight: 900; font-size: 1.1rem; letter-spacing: -0.03em; 
-            display: flex; align-items: center; gap: 0.5rem; 
-            text-decoration: none; color: var(--slate-900); 
-            white-space: nowrap;
-        }
-        @media (min-width: 768px) { .logo { font-size: 1.5rem; gap: 0.75rem; } }
-
-        .nav-area { justify-self: center; }
-        .nav-menu { display: flex; gap: 2.5rem; align-items: center; list-style: none; margin: 0; padding: 0; }
+        .header-grid { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        @media (min-width: 768px) { .header-grid { display: grid; grid-template-columns: 1fr auto 1fr; } }
         
-        .nav-link { font-weight: 600; font-size: 0.95rem; color: var(--slate-600); padding: 0.5rem 0; transition: color 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; position: relative; }
-        .nav-link:hover { color: var(--orange-600); }
-        
-        .dropdown-parent { position: relative; height: 96px; display: flex; align-items: center; cursor: pointer; }
-        .dropdown-menu { position: absolute; top: 96px; left: 50%; transform: translateX(-50%) translateY(10px); background: white; border: 1px solid var(--slate-200); border-top: 3px solid var(--orange-600); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); min-width: 240px; display: none; flex-direction: column; padding: 0.75rem 0; border-radius: 0 0 6px 6px; opacity: 0; transition: all 0.2s; }
-        .dropdown-parent:hover .dropdown-menu { display: flex; opacity: 1; transform: translateX(-50%) translateY(0); }
-        .dropdown-item { padding: 0.85rem 1.5rem; color: var(--slate-600); text-decoration: none; font-size: 0.9rem; display: flex; justify-content: space-between; transition: 0.2s; }
-        .dropdown-item:hover { background: var(--slate-50); color: var(--orange-600); padding-left: 1.75rem; }
+        .logo { font-weight: 900; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: var(--slate-900); }
+        @media (min-width: 768px) { .logo { font-size: 1.5rem; } }
 
-        .cta-area { justify-self: end; display: flex; align-items: center; gap: 0.75rem; }
-
-        .btn-responsive-cta {
-            font-size: 0.8rem; font-weight: 700; color: var(--orange-600);
-            border: 1px solid var(--orange-600); padding: 0.4rem 0.9rem;
-            border-radius: 50px; text-decoration: none; transition: all 0.2s;
-            background: transparent; white-space: nowrap;
-        }
-        .btn-responsive-cta:hover { background: var(--orange-600); color: white; }
-        
-        @media (min-width: 768px) {
-            .btn-responsive-cta {
-                background: var(--orange-600); color: white; font-size: 0.9rem;
-                padding: 0.85rem 2rem; border-radius: 4px; border: none;
-                box-shadow: 0 4px 12px rgba(234,88,12,0.25);
-            }
-            .btn-responsive-cta:hover { background: var(--orange-700); transform: translateY(-1px); color: white; }
-        }
-
-        .btn { padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.2s; }
-        .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(234,88,12,0.25); }
-        .btn-primary:hover { background: var(--orange-700); transform: translateY(-1px); }
-
-        /* --- WHATSAPP FLOTANTE --- */
-        .btn-whatsapp-float {
-            position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5); z-index: 2000; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-decoration: none;
-        }
-        .btn-whatsapp-float:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.6); }
-        .btn-whatsapp-float svg { width: 32px; height: 32px; fill: white; }
-
-        /* --- 4. HERO SECTION --- */
+        /* Hero (LCP) */
         .hero-segment { 
             position: relative; height: 70vh; min-height: 500px; 
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; color: white;
-            padding-top: 80px; overflow: hidden; background: var(--slate-900);
+            display: flex; align-items: center; justify-content: center; 
+            text-align: center; color: white; padding-top: 80px; 
+            overflow: hidden; background: var(--slate-900);
         }
         @media (min-width: 768px) { .hero-segment { height: 75vh; padding-top: 96px; } }
-
-        .hero-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; z-index: 0; }
+        
+        .hero-img { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            opacity: 0.5; z-index: 0;
+        }
         
         .hero-content-vis { position: relative; z-index: 10; max-width: 950px; padding: 0 1rem; width: 100%; }
-
-        .hero-badge { background: #f8fafc; color: #0f172a; font-weight: 800; padding: 0.5rem 1.2rem; border-radius: 50px; display: inline-block; margin-bottom: 1.5rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
-
-        .section-title { font-size: 1.8rem; font-weight: 800; color: var(--slate-900); margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.2; }
-        @media(min-width:768px){ .section-title { font-size: 2.5rem; } }
-
-        .section-subtitle { color: var(--slate-600); font-size: 1rem; max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6; }
-        @media(min-width:768px){ .section-subtitle { font-size: 1.1rem; } }
-
-        /* --- 5. FEATURES (PREMIUM) --- */
-        .premium-section { padding: 4rem 0; }
-        @media(min-width:768px){ .premium-section { padding: 6rem 0; } }
-
-        /* Solución "Winning Formula" para listas */
-        .feature-list { 
-            list-style: none; 
-            margin-top: 1.5rem; 
-            width: 100%; 
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .feature-list li { 
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            width: 100%;
-            min-width: 0; /* Clave para evitar desbordamiento */
-        }
-        
-        .feature-icon { 
-            color: var(--orange-600); 
-            flex-shrink: 0; 
-            width: 22px;
-            height: 22px;
-            min-width: 22px;
-            margin-top: 4px;
+        .hero-badge { 
+            background: #f8fafc; color: #0f172a; font-weight: 800; 
+            padding: 0.5rem 1.2rem; border-radius: 50px; display: inline-block; 
+            margin-bottom: 1.5rem; font-size: 0.75rem; letter-spacing: 0.1em; 
+            text-transform: uppercase;
         }
 
-        .feature-text {
-            color: var(--slate-700);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            flex: 1;
-            min-width: 0; /* Clave para el wrap */
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            font-weight: 500;
+        .btn-responsive-cta { 
+            font-size: 0.8rem; font-weight: 700; color: var(--orange-600); 
+            border: 1px solid var(--orange-600); padding: 0.4rem 0.9rem; 
+            border-radius: 50px; text-decoration: none; background: transparent; 
+            display: inline-block;
+        }
+        @media (min-width: 768px) {
+            .btn-responsive-cta { 
+                background: var(--orange-600); color: white; font-size: 0.9rem; 
+                padding: 0.85rem 2rem; border-radius: 4px; border: none; 
+                box-shadow: 0 4px 12px rgba(234,88,12,0.25); 
+            }
+            .btn-responsive-cta:hover { background: var(--orange-700); transform: translateY(-1px); }
         }
 
-        .feature-img-box {
-            height: 300px; 
-            background: #e2e8f0; 
-            border-radius: 12px; 
-            overflow: hidden; 
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
-            width: 100%;
-        }
-        @media(min-width:768px){ .feature-img-box { height: 450px; } }
-        
-        .feature-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-        /* --- 6. GALLERY STYLES --- */
-        .style-card { background: white; border: 1px solid var(--slate-200); transition: 0.3s; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; height: 100%; }
-        .style-card:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1); border-color: var(--orange-600); }
-        
-        .style-img { height: 220px; overflow: hidden; position: relative; background: var(--slate-200); }
-        @media(min-width:768px){ .style-img { height: 280px; } }
-        
-        .style-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .style-card:hover .style-img img { transform: scale(1.05); }
-        
-        .style-info { padding: 1.5rem; flex-grow: 1; }
-        @media(min-width:768px){ .style-info { padding: 2rem; } }
-
-        /* --- 7. CTA SEPARADO --- */
-        .cta-section { background: var(--slate-900); color: white; padding: 4rem 0; text-align: center; }
-        @media(min-width:768px){ .cta-section { padding: 6rem 0; } }
-
-        .cta-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem; }
-        @media(min-width:768px){ .cta-title { font-size: 2.5rem; } }
-
-        .cta-desc { color: var(--slate-300); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1rem; line-height: 1.6; }
-        @media(min-width:768px){ .cta-desc { font-size: 1.1rem; } }
-
-        /* --- 8. FOOTER --- */
-        footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.1); }
-        @media(min-width:768px){ footer { padding: 6rem 0 2rem 0; } }
-        
-        footer h4 { color: white; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9; }
-        footer a { color: #ffffff; opacity: 0.7; text-decoration: none; display: block; margin-bottom: 0.75rem; transition: 0.2s; }
-        footer a:hover { opacity: 1; color: var(--orange-600); padding-left: 4px; }
-
-        /* Mobile Menu */
-        #mobile-menu { display: none; position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; padding: 2rem; border-top: 1px solid var(--slate-200); z-index: 999; overflow-y: auto; }
-        #mobile-menu.open { display: flex; }
-        .mobile-link { font-size: 1.2rem; font-weight: 700; color: var(--slate-800); padding: 1.2rem 0; border-bottom: 1px solid var(--slate-100); text-decoration: none; display: flex; justify-content: space-between; align-items: center; }
+        .hidden { display: none; }
+        @media (min-width: 768px) { .md-hidden { display: none; } .md-flex { display: flex; } }
     </style>
 </head>
 <body>
@@ -246,13 +93,164 @@
         <div class="container header-grid">
             <div class="logo-area">
                 <a href="../index.html" class="logo" title="Volver al inicio">
-                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" 
+                         alt="Logo Incormaderas" 
+                         width="67" height="67"
+                         style="height: 2.4rem; width: auto;">
                     INCORMADERAS
                 </a>
             </div>
 
-            <div class="nav-area md-flex hidden">
-                <nav class="nav-menu">
+            <nav class="nav-area md-flex hidden" id="main-nav"></nav>
+
+            <div class="cta-area">
+                <a href="../contacto.html" class="btn-responsive-cta">Cotizar</a>
+                <button class="md-hidden" onclick="toggleMenu()" aria-label="Abrir menú de navegación" style="background: none; border: none; padding: 0.25rem; cursor: pointer; color: var(--slate-900);">
+                    <svg id="menu-icon" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg id="close-icon" class="hidden" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-segment">
+            <img class="hero-img" 
+                 src="https://www.carpinteriaarquitectonica.com.co/assets/diseno-cocina-integral-lujo-acabado-alto-brillo.webp" 
+                 alt="Diseño de cocina integral de lujo acabado alto brillo"
+                 width="1920"
+                 height="1080"
+                 fetchpriority="high"
+                 loading="eager"
+                 decoding="sync">
+                 
+            <div class="hero-content-vis">
+                <span class="hero-badge">LÍNEA EXCLUSIVA NO VIS</span>
+                <h1 style="font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em;">
+                    Dotación Premium de Carpintería<br>para Vivienda No VIS
+                </h1>
+                <p style="font-size: clamp(1rem, 2vw, 1.25rem); margin-bottom: 0; color: var(--slate-200); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; opacity: 0.95;">
+                    Diseño sofisticado para proyectos de valorización. Elevamos el precio del metro cuadrado con acabados texturizados y herrajes de última tecnología.
+                </p>
+            </div>
+        </section>
+
+        <div id="deferred-content"></div>
+    </main>
+
+    <div id="mobile-menu" style="display: none;"></div>
+
+    <script>
+        // Función Menú Móvil
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+            
+            if (menu.style.display === 'none') {
+                menu.style.display = 'flex';
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                menu.style.display = 'none';
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        // --- CARGA DIFERIDA PARA LCP ---
+        window.addEventListener('load', function() {
+            // 1. Cargar CSS completo
+            loadDeferredStyles();
+            
+            // 2. Inyectar Navegación (Header y Móvil)
+            loadNav();
+
+            // 3. Inyectar el resto de la página
+            setTimeout(loadDeferredContent, 50);
+            
+            // 4. Cargar WhatsApp
+            setTimeout(loadWhatsAppButton, 2000); 
+        });
+
+        function loadDeferredStyles() {
+            const css = `
+                .grid { display: grid; gap: 2rem; }
+                .flex { display: flex; }
+                .justify-between { justify-content: space-between; }
+                .items-center { align-items: center; }
+                .text-center { text-align: center; }
+                .w-full { width: 100%; }
+                
+                @media (min-width: 768px) {
+                    .md-grid-2 { grid-template-columns: 1fr 1fr; }
+                    .md-grid-3 { grid-template-columns: repeat(3, 1fr); }
+                    .md-grid-4 { grid-template-columns: repeat(4, 1fr); }
+                }
+
+                .nav-menu { display: flex; gap: 2.5rem; align-items: center; list-style: none; margin: 0; padding: 0; }
+                .nav-link { font-weight: 600; font-size: 0.95rem; color: var(--slate-600); padding: 0.5rem 0; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+                .nav-link:hover { color: var(--orange-600); }
+                
+                .dropdown-parent { position: relative; height: 96px; display: flex; align-items: center; cursor: pointer; }
+                .dropdown-menu { position: absolute; top: 96px; left: 50%; transform: translateX(-50%) translateY(10px); background: white; border: 1px solid var(--slate-200); border-top: 3px solid var(--orange-600); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); min-width: 240px; display: none; flex-direction: column; padding: 0.75rem 0; border-radius: 0 0 6px 6px; opacity: 0; transition: all 0.2s; }
+                .dropdown-parent:hover .dropdown-menu { display: flex; opacity: 1; transform: translateX(-50%) translateY(0); }
+                .dropdown-item { padding: 0.85rem 1.5rem; color: var(--slate-600); text-decoration: none; font-size: 0.9rem; display: flex; justify-content: space-between; transition: 0.2s; }
+                .dropdown-item:hover { background: var(--slate-50); color: var(--orange-600); padding-left: 1.75rem; }
+
+                .btn { padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.2s; }
+                .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(234,88,12,0.25); }
+                .btn-primary:hover { background: var(--orange-700); transform: translateY(-1px); }
+
+                .premium-section { padding: 4rem 0; }
+                @media(min-width:768px){ .premium-section { padding: 6rem 0; } }
+                
+                .section-title { font-size: 1.8rem; font-weight: 800; color: var(--slate-900); margin-bottom: 1rem; letter-spacing: -0.02em; line-height: 1.2; }
+                @media(min-width:768px){ .section-title { font-size: 2.5rem; } }
+                .section-subtitle { color: var(--slate-600); font-size: 1rem; max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6; }
+                @media(min-width:768px){ .section-subtitle { font-size: 1.1rem; } }
+
+                .feature-list { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+                .feature-list li { display: flex; align-items: flex-start; gap: 12px; }
+                .feature-icon { color: var(--orange-600); flex-shrink: 0; width: 22px; height: 22px; margin-top: 4px; }
+                .feature-text { color: var(--slate-700); font-size: 0.95rem; font-weight: 500; }
+                
+                .feature-img-box { border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); width: 100%; background: #e2e8f0; }
+                .feature-img-box img { width: 100%; height: 100%; object-fit: cover; }
+
+                .style-card { background: white; border: 1px solid var(--slate-200); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; height: 100%; transition: 0.3s; }
+                .style-card:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.1); border-color: var(--orange-600); }
+                .style-img { overflow: hidden; position: relative; background: var(--slate-200); aspect-ratio: 16/9; }
+                .style-img img { transition: 0.5s; width: 100%; height: 100%; object-fit: cover; }
+                .style-card:hover .style-img img { transform: scale(1.05); }
+                .style-info { padding: 1.5rem; flex-grow: 1; }
+
+                .cta-section { background: var(--slate-900); color: white; padding: 4rem 0; text-align: center; }
+                .cta-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 1.5rem; }
+                @media(min-width:768px){ .cta-title { font-size: 2.5rem; } }
+                .cta-desc { color: var(--slate-300); max-width: 600px; margin: 0 auto 2.5rem auto; font-size: 1rem; }
+
+                footer { background: var(--slate-900); color: white; padding: 4rem 0 2rem 0; font-size: 0.95rem; border-top: 1px solid rgba(255,255,255,0.1); }
+                footer h3 { color: white; margin-bottom: 1.5rem; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9; }
+                footer a { color: #ffffff; opacity: 0.7; text-decoration: none; display: block; margin-bottom: 0.75rem; transition: 0.2s; }
+                footer a:hover { opacity: 1; color: var(--orange-light); padding-left: 4px; }
+
+                .btn-whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp-green); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.5); z-index: 2000; text-decoration: none; transition: transform 0.3s; }
+                .btn-whatsapp-float:hover { transform: scale(1.1) translateY(-5px); }
+                .btn-whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+                #mobile-menu { position: fixed; top: 80px; left: 0; width: 100%; height: calc(100vh - 80px); background: white; flex-direction: column; padding: 2rem; border-top: 1px solid var(--slate-200); z-index: 999; overflow-y: auto; }
+                .mobile-link { font-size: 1.2rem; font-weight: 700; color: var(--slate-800); padding: 1.2rem 0; border-bottom: 1px solid var(--slate-100); text-decoration: none; display: flex; justify-content: space-between; align-items: center; }
+            `;
+            const style = document.createElement('style');
+            style.textContent = css;
+            document.head.appendChild(style);
+        }
+
+        function loadNav() {
+            // Contenido del Menú Desktop
+            const navHTML = `
+                <ul class="nav-menu">
                     <a href="../index.html" class="nav-link">Inicio</a>
                     <div class="dropdown-parent">
                         <a href="#" class="nav-link" style="color: var(--orange-600);">Soluciones <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="margin-top:2px;"><path d="M6 9l6 6 6-6"/></svg></a>
@@ -272,203 +270,193 @@
                     </div>
                     <a href="../infraestructura.html" class="nav-link">Planta</a>
                     <a href="../zona-tecnica.html" class="nav-link">Zona Técnica</a>
-                </nav>
-            </div>
+                </ul>
+            `;
+            document.getElementById('main-nav').innerHTML = navHTML;
 
-            <div class="cta-area">
-                <a href="../contacto.html" class="btn-responsive-cta">Cotizar</a>
-                <button class="md-hidden" onclick="toggleMenu()" aria-label="Menú móvil" style="background: none; border: none; padding: 0.25rem; cursor: pointer; color: var(--slate-900);">
-                    <svg id="menu-icon" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-                    <svg id="close-icon" class="hidden" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-            </div>
-        </div>
-    </header>
+            // Contenido del Menú Móvil
+            const mobileHTML = `
+                <a href="../index.html" class="mobile-link">Inicio</a>
+                <a href="vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
+                <a href="vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
+                <a href="../productos/cocinas.html" class="mobile-link">Cocinas</a>
+                <a href="../productos/closets.html" class="mobile-link">Clósets</a>
+                <a href="../productos/puertas.html" class="mobile-link">Puertas</a>
+                <a href="../productos/zonas-comunes.html" class="mobile-link">Lockers y Zonas Comunes</a>
+                <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
+                <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
+                <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
+            `;
+            document.getElementById('mobile-menu').innerHTML = mobileHTML;
+        }
 
-    <a href="https://wa.me/573244403147" class="btn-whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
-
-    <div id="mobile-menu">
-        <a href="../index.html" class="mobile-link">Inicio</a>
-        <a href="vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
-        <a href="vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
-        <a href="../productos/cocinas.html" class="mobile-link">Cocinas</a>
-        <a href="../productos/closets.html" class="mobile-link">Clósets</a>
-        <a href="../productos/puertas.html" class="mobile-link">Puertas</a>
-        <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
-        <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
-        <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
-    </div>
-
-    <main>
-        <section class="hero-segment">
-            <img class="hero-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80" 
-                 srcset="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80 600w,
-                         https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80 1200w,
-                         https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=80 1920w"
-                 sizes="100vw" alt="Carpintería Premium No VIS - Incormaderas" fetchpriority="high">
-            <div class="hero-content-vis">
-                <span class="hero-badge">LÍNEA EXCLUSIVA NO VIS</span>
-                <h1 style="font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em;">
-                    Dotación Premium de Carpintería<br>para Vivienda No VIS
-                </h1>
-                <p style="font-size: clamp(1rem, 2vw, 1.25rem); margin-bottom: 0; color: var(--slate-200); max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6; opacity: 0.95;">
-                    Diseño sofisticado para proyectos de valorización. Elevamos el precio del metro cuadrado con acabados texturizados y herrajes de última tecnología.
-                </p>
-            </div>
-        </section>
-
-        <section class="premium-section">
-            <div class="container">
-                <div class="grid md-grid-2 items-center" style="margin-bottom: 6rem;">
-                    <div style="order: 2;">
-                        <h2 class="section-title">Experiencia Táctil y Valor Percibido</h2>
-                        <p class="section-subtitle" style="margin-bottom: 1.5rem; margin-left: 0;">
-                            Dejamos atrás los colores planos. Implementamos melaminas de <strong>poro sincronizado</strong> que replican la veta de la madera al tacto, y acabados Alto Brillo o Súper Mate (anti-huella) para ambientes modernos.
-                        </p>
-                        <ul class="feature-list">
-                            <li>
-                                <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <span class="feature-text">Tableros RH de 18mm para mayor robustez y cuerpo.</span>
-                            </li>
-                            <li>
-                                <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <span class="feature-text">Cantos rígidos de 2mm que aportan solidez y protegen bordes.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="feature-img-box" style="order: 1;">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80" alt="Texturas de melamina tipo madera poro sincronizado para carpintería de lujo" loading="lazy" width="800" height="450">
-                    </div>
-                </div>
-
-                <div class="grid md-grid-2 items-center">
-                    <div class="feature-img-box">
-                         <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?auto=format&fit=crop&w=800&q=80" alt="Herrajes de cocina con cierre lento soft close" loading="lazy" width="800" height="450">
-                    </div>
-                    <div>
-                        <h2 class="section-title">Confort y Tecnología de Movimiento</h2>
-                        <p class="section-subtitle" style="margin-bottom: 1.5rem; margin-left: 0;">
-                            El lujo se siente en el uso diario. Integramos sistemas de herrajes europeos que garantizan silencio y suavidad en cada interacción, un argumento de venta potente en la sala de ventas.
-                        </p>
-                        <ul class="feature-list">
-                            <li>
-                                <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <span class="feature-text">Bisagras con cierre lento integrado (Soft Close Certificado).</span>
-                            </li>
-                            <li>
-                                <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <span class="feature-text">Rieles de cajón ocultos de extracción total.</span>
-                            </li>
-                            <li>
-                                <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <span class="feature-text">Superficies en Quartzstone y piedra sinterizada (Neolith).</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section style="background: #f8fafc; padding: 4rem 0; border-top: 1px solid var(--slate-200);">
-            <div class="container">
-                <div class="text-center" style="margin-bottom: 4rem;">
-                    <h2 class="section-title">Portafolio de Estilos Arquitectónicos</h2>
-                    <p class="section-subtitle">Personalización según la identidad de diseño del proyecto.</p>
-                </div>
-
-                <div class="grid md-grid-3">
-                    <div class="style-card">
-                        <div class="style-img">
-                            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80" alt="Estilo Industrial Chic en cocina" loading="lazy" width="600" height="280">
+        function loadDeferredContent() {
+            const content = `
+                <section class="premium-section">
+                    <div class="container">
+                        <div class="grid md-grid-2 items-center" style="margin-bottom: 6rem;">
+                            <div style="order: 2;">
+                                <h2 class="section-title">Experiencia Táctil y Valor Percibido</h2>
+                                <p class="section-subtitle" style="margin-bottom: 1.5rem; margin-left: 0;">
+                                    Dejamos atrás los colores planos. Implementamos melaminas de <strong>poro sincronizado</strong> que replican la veta de la madera al tacto, y acabados Alto Brillo o Súper Mate (anti-huella) para ambientes modernos.
+                                </p>
+                                <ul class="feature-list">
+                                    <li>
+                                        <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                        <span class="feature-text">Tableros RH de 18mm para mayor robustez y cuerpo.</span>
+                                    </li>
+                                    <li>
+                                        <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                        <span class="feature-text">Cantos rígidos de 2mm que aportan solidez y protegen bordes.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="feature-img-box" style="order: 1;">
+                                <img src="https://www.carpinteriaarquitectonica.com.co/assets/detalle-canto-rigido-pvc-acabados-premium.webp" 
+                                     alt="Detalle de canto rígido en PVC para acabados premium" 
+                                     width="800" height="450"
+                                     loading="lazy">
+                            </div>
                         </div>
-                        <div class="style-info">
-                            <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Industrial Chic</h4>
-                            <p style="font-size: 0.95rem; color: var(--slate-600);">Combinación de melaminas maderadas oscuras, estructuras metálicas negras a la vista y vidrio.</p>
+
+                        <div class="grid md-grid-2 items-center">
+                            <div class="feature-img-box">
+                                 <img src="https://www.carpinteriaarquitectonica.com.co/assets/cajon-sistema-cierre-lento-herrajes-alta-gama.webp" 
+                                      alt="Sistema de cajón con cierre lento y herrajes de alta gama" 
+                                      width="652" height="525"
+                                      loading="lazy">
+                            </div>
+                            <div>
+                                <h2 class="section-title">Confort y Tecnología de Movimiento</h2>
+                                <p class="section-subtitle" style="margin-bottom: 1.5rem; margin-left: 0;">
+                                    El lujo se siente en el uso diario. Integramos sistemas de herrajes europeos que garantizan silencio y suavidad en cada interacción, un argumento de venta potente en la sala de ventas.
+                                </p>
+                                <ul class="feature-list">
+                                    <li>
+                                        <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                        <span class="feature-text">Bisagras con cierre lento integrado (Soft Close Certificado).</span>
+                                    </li>
+                                    <li>
+                                        <svg class="feature-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                        <span class="feature-text">Rieles de cajón ocultos de extracción total.</span>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="style-card">
-                        <div class="style-img">
-                            <img src="https://images.unsplash.com/photo-1600566753086-00f18cf6b3ea?auto=format&fit=crop&w=600&q=80" alt="Estilo Minimalista Nórdico en cocina" loading="lazy" width="600" height="280">
+                <section style="background: #f8fafc; padding: 4rem 0; border-top: 1px solid var(--slate-200);">
+                    <div class="container">
+                        <div class="text-center" style="margin-bottom: 4rem;">
+                            <h2 class="section-title">Portafolio de Estilos Arquitectónicos</h2>
+                            <p class="section-subtitle">Personalización según la identidad de diseño del proyecto.</p>
                         </div>
-                        <div class="style-info">
-                            <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Minimalismo Nórdico</h4>
-                            <p style="font-size: 0.95rem; color: var(--slate-600);">Tonos planos (taupe, gris, blanco), sin manijas (sistema gola o push), pureza visual y líneas limpias.</p>
+
+                        <div class="grid md-grid-3">
+                            <div class="style-card">
+                                <div class="style-img">
+                                    <img src="https://www.carpinteriaarquitectonica.com.co/assets/diseno-cocina-integral-lujo-acabado-alto-brillo.webp" 
+                                         alt="Cocina integral de lujo con acabados brillantes" 
+                                         width="706" height="385"
+                                         loading="lazy">
+                                </div>
+                                <div class="style-info">
+                                    <h3 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Moderno High Gloss</h3>
+                                    <p style="font-size: 0.95rem; color: var(--slate-600);">Combinación de superficies reflectivas y estructuras metálicas para un look vanguardista.</p>
+                                </div>
+                            </div>
+
+                            <div class="style-card">
+                                <div class="style-img">
+                                    <img src="https://www.carpinteriaarquitectonica.com.co/assets/closet-empotrado-a-medida-textura-seda-giorno.webp" 
+                                         alt="Clóset empotrado a medida con textura seda giorno" 
+                                         width="706" height="385"
+                                         loading="lazy">
+                                </div>
+                                <div class="style-info">
+                                    <h3 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Natural Texturizado</h3>
+                                    <p style="font-size: 0.95rem; color: var(--slate-600);">Tonos maderados profundos (Seda Giorno) con herrajes ocultos y diseño funcional.</p>
+                                </div>
+                            </div>
+
+                            <div class="style-card">
+                                <div class="style-img">
+                                    <img src="https://www.carpinteriaarquitectonica.com.co/assets/mueble-bano-flotante-madera-oscura-moderno.webp" 
+                                         alt="Mueble de baño flotante moderno en madera oscura" 
+                                         width="706" height="385"
+                                         loading="lazy">
+                                </div>
+                                <div class="style-info">
+                                    <h3 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Luxury Bath</h3>
+                                    <p style="font-size: 0.95rem; color: var(--slate-600);">Muebles flotantes y acabados oscuros, piedras exóticas y acentos de diseño.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </section>
 
-                    <div class="style-card">
-                        <div class="style-img">
-                            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80" alt="Estilo Luxury Dark en vestidor" loading="lazy" width="600" height="280">
+                <section class="cta-section">
+                    <div class="container">
+                        <span style="color: var(--orange-light); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block;">Atención Personalizada</span>
+                        <h2 class="cta-title">Agende una Sesión de Muestras</h2>
+                        <p class="cta-desc">Llevamos nuestro catálogo de texturas y herrajes premium a su sala de ventas o estudio de arquitectura para validación física.</p>
+                        <a href="../contacto.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;">Coordinar Visita Técnica</a>
+                    </div>
+                </section>
+
+                <footer>
+                    <div class="container">
+                        <div class="grid md-grid-4" style="margin-bottom: 3rem;">
+                            <div>
+                                <h3 class="flex items-center" style="gap: 0.5rem;">
+                                    <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
+                                    INCORMADERAS
+                                </h3>
+                                <p style="color: var(--slate-300); opacity: 0.8; line-height: 1.6;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
+                            </div>
+                            <div>
+                                <h3>Enlaces Rápidos</h3>
+                                <a href="../index.html">Inicio</a>
+                                <a href="../infraestructura.html">Nuestra Planta</a>
+                                <a href="../zona-tecnica.html">Descargas</a>
+                                <a href="../contacto.html">Trabaja con nosotros</a>
+                            </div>
+                            <div>
+                                <h3>Productos</h3>
+                                <a href="../productos/cocinas.html">Cocinas Integrales</a>
+                                <a href="../productos/closets.html">Clósets</a>
+                                <a href="../productos/puertas.html">Puertas</a>
+                                <a href="../productos/zonas-comunes.html">Institucional</a>
+                            </div>
+                            <div>
+                                <h3>Contacto B2B</h3>
+                                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
+                                <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
+                                <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
+                            </div>
                         </div>
-                        <div class="style-info">
-                            <h4 style="font-weight: 700; margin-bottom: 0.5rem; font-size: 1.2rem;">Luxury Dark</h4>
-                            <p style="font-size: 0.95rem; color: var(--slate-600);">Acabados oscuros, piedras exóticas y acentos en bronce o dorado para proyectos de alto perfil.</p>
+                        
+                        <div class="text-center" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
+                            © 2025 Incormaderas S.A.S. Todos los derechos reservados.
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </footer>
+            `;
+            // INYECCIÓN DE CONTENIDO (Esto es lo que faltaba)
+            document.getElementById('deferred-content').innerHTML = content;
+        }
 
-        <section class="cta-section">
-            <div class="container">
-                <span style="color: var(--orange-600); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; display: block;">Atención Personalizada</span>
-                <h2 class="cta-title">Agende una Sesión de Muestras</h2>
-                <p class="cta-desc">Llevamos nuestro catálogo de texturas y herrajes premium a su sala de ventas o estudio de arquitectura para validación física.</p>
-                <a href="../contacto.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 3rem;">Coordinar Visita Técnica</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="grid md-grid-4" style="margin-bottom: 3rem;">
-                <div>
-                    <h4 class="flex items-center" style="gap: 0.5rem;">
-                        <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
-                        INCORMADERAS
-                    </h4>
-                    <p style="color: var(--slate-300); opacity: 0.8; line-height: 1.6;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
-                </div>
-                <div>
-                    <h4>Enlaces Rápidos</h4>
-                    <a href="../index.html">Inicio</a>
-                    <a href="../infraestructura.html">Nuestra Planta</a>
-                    <a href="../zona-tecnica.html">Descargas</a>
-                    <a href="../contacto.html">Trabaja con nosotros</a>
-                </div>
-                <div>
-                    <h4>Productos</h4>
-                    <a href="../productos/cocinas.html">Cocinas Integrales</a>
-                    <a href="../productos/closets.html">Clósets</a>
-                    <a href="../productos/puertas.html">Puertas</a>
-                    <a href="../productos/zonas-comunes.html">Institucional</a>
-                </div>
-                <div>
-                    <h4>Contacto B2B</h4>
-                    <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
-                    <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
-                    <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
-                </div>
-            </div>
-            
-            <div class="text-center" style="padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
-                © 2025 Incormaderas S.A.S. Todos los derechos reservados.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const menuIcon = document.getElementById('menu-icon');
-            const closeIcon = document.getElementById('close-icon');
-            
-            menu.classList.toggle('open');
-            menuIcon.classList.toggle('hidden');
-            closeIcon.classList.toggle('hidden');
+        function loadWhatsAppButton() {
+            const btnHTML = `
+                <a href="https://wa.me/573244403147" class="btn-whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                </a>
+            `;
+            const div = document.createElement('div');
+            div.innerHTML = btnHTML;
+            document.body.appendChild(div);
         }
     </script>
 
