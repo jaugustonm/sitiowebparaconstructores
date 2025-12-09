@@ -152,8 +152,10 @@
             display: inline-flex; align-items: center; justify-content: center; 
             text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.2s;
         }
-        .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(234,88,12,0.25); }
-        .btn-primary:hover { background: var(--orange-700); transform: translateY(-1px); }
+        
+        /* CORRECCIÓN ACCESIBILIDAD: Color oscurecido para mejor contraste */
+        .btn-primary { background: var(--orange-700); color: white; box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25); }
+        .btn-primary:hover { background: #9a3412; transform: translateY(-1px); }
 
         /* --- WHATSAPP FLOTANTE --- */
         .btn-whatsapp-float {
@@ -217,9 +219,10 @@
             width: 100%;
         }
 
+        /* CORRECCIÓN ACCESIBILIDAD: Texto oscurecido para contraste */
         .hero-badge { 
             background: #facc15; 
-            color: #854d0e; 
+            color: #422006; 
             font-weight: 800; 
             padding: 0.5rem 1.2rem; 
             border-radius: 50px; 
@@ -456,7 +459,8 @@
         }
         @media(min-width:768px){ footer { padding: 6rem 0 2rem 0; } }
 
-        footer h4 { 
+        /* CORRECCIÓN ACCESIBILIDAD: Cambio de H4 a H3 para orden lógico */
+        footer h3 { 
             color: white; 
             margin-bottom: 1.5rem; 
             font-weight: 800; 
@@ -516,7 +520,7 @@
             
             <div class="logo-area">
                 <a href="../index.html" class="logo" title="Incormaderas - Inicio">
-                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="Logo Incormaderas Fábrica de Carpintería" width="250" height="250" style="height: 2.4rem; width: auto;">
                     INCORMADERAS
                 </a>
             </div>
@@ -574,6 +578,7 @@
         <a href="../productos/cocinas.html" class="mobile-link">Cocinas</a>
         <a href="../productos/closets.html" class="mobile-link">Clósets</a>
         <a href="../productos/puertas.html" class="mobile-link">Puertas</a>
+        <a href="../productos/zonas-comunes.html" class="mobile-link">Lockers y Zonas Comunes</a>
         <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
         <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
         <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
@@ -613,14 +618,12 @@
 
                 <div class="product-highlight">
                     <div class="highlight-img-container">
-                        <img src="https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=800&q=80" 
-                             srcset="https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=400&q=60 400w,
-                                     https://images.unsplash.com/photo-1517646331032-9e8563c523a1?auto=format&fit=crop&w=800&q=80 800w"
-                             sizes="(max-width: 768px) 100vw, 50vw"
-                             alt="Puerta entamborada económica para vivienda de interés social"
+                        <img src="https://carpinteriaarquitectonica.com.co/assets/carpinteria-vivienda-vis-obra-negra.webp" 
                              loading="lazy"
+                             alt="Instalación de puertas y carpintería en obra negra para proyectos de vivienda VIS"
                              width="800"
-                             height="600">
+                             height="600"
+                             style="max-width: 100%; height: auto;">
                     </div>
                     
                     <div class="highlight-body">
@@ -730,28 +733,28 @@
         <div class="container">
             <div class="grid md-grid-4" style="margin-bottom: 3rem;">
                 <div>
-                    <h4 class="flex items-center" style="gap: 0.5rem;">
+                    <h3 class="flex items-center" style="gap: 0.5rem; color:white; font-weight: 800; font-size: 0.8rem; letter-spacing: 0.1em; opacity: 0.9;">
                         <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
                         INCORMADERAS
-                    </h4>
+                    </h3>
                     <p style="color: var(--slate-300); opacity: 0.8; line-height: 1.6;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
                 </div>
                 <div>
-                    <h4>Enlaces Rápidos</h4>
+                    <h3>Enlaces Rápidos</h3>
                     <a href="../index.html">Inicio</a>
                     <a href="../infraestructura.html">Nuestra Planta</a>
                     <a href="../zona-tecnica.html">Descargas</a>
                     <a href="../contacto.html">Trabaja con nosotros</a>
                 </div>
                 <div>
-                    <h4>Productos</h4>
+                    <h3>Productos</h3>
                     <a href="../productos/cocinas.html">Cocinas Integrales</a>
                     <a href="../productos/closets.html">Clósets</a>
                     <a href="../productos/puertas.html">Puertas</a>
                     <a href="../productos/zonas-comunes.html">Institucional</a>
                 </div>
                 <div>
-                    <h4>Contacto B2B</h4>
+                    <h3>Contacto B2B</h3>
                     <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
                     <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
                     <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
