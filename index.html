@@ -11,14 +11,16 @@
     <link rel="canonical" href="https://www.incormaderas.com/" />
     <link rel="icon" type="image/webp" href="https://carpinteriaarquitectonica.com.co/assets/favicon-incormaderas.webp">
 
-    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1920&auto=format&fit=crop" imagesrcset="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=600&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop 1200w, https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1920&auto=format&fit=crop 1920w" imagesizes="100vw">
+    <link rel="preload" as="image" href="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop" imagesrcset="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=600&auto=format&fit=crop 600w, https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop 1200w" imagesizes="100vw">
 
     <style>
         /* --- 1. VARIABLES & RESET --- */
         :root {
             --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
             --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
-            --orange-600: #ea580c; --orange-700: #c2410c; --white: #ffffff;
+            --orange-600: #c2410c; 
+            --orange-700: #9a3412; 
+            --white: #ffffff;
             --whatsapp-green: #25D366;
             --font-main: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
@@ -58,9 +60,7 @@
         }
         @media (min-width: 768px) { header { height: 96px; } }
 
-        /* --- CORRECCIÓN 1: ALINEACIÓN MÓVIL VS ESCRITORIO --- */
         .header-grid {
-            /* MÓVIL: Flexbox con 'space-between' empuja los elementos a los extremos */
             display: flex;
             justify-content: space-between; 
             align-items: center;
@@ -69,7 +69,6 @@
 
         @media (min-width: 768px) {
             .header-grid {
-                /* ESCRITORIO: Volvemos a Grid para centrar el menú de navegación perfectamente */
                 display: grid;
                 grid-template-columns: 1fr auto 1fr; 
                 justify-content: initial;
@@ -95,7 +94,6 @@
         }
         .nav-link:hover { color: var(--orange-600); }
         
-        /* Dropdowns */
         .dropdown-parent { position: relative; height: 96px; display: flex; align-items: center; cursor: pointer; }
         .dropdown-menu { 
             position: absolute; top: 96px; left: 50%; transform: translateX(-50%) translateY(10px); 
@@ -109,26 +107,22 @@
         .dropdown-item { padding: 0.85rem 1.5rem; color: var(--slate-600); text-decoration: none; font-size: 0.9rem; display: flex; justify-content: space-between; transition: 0.2s; }
         .dropdown-item:hover { background: var(--slate-50); color: var(--orange-600); padding-left: 1.75rem; }
 
-        /* --- BOTONES --- */
         .cta-area { 
             justify-self: end; 
             display: flex; 
             align-items: center; 
-            gap: 0.75rem; /* Espacio entre botón cotizar y hamburguesa */
+            gap: 0.75rem; 
         }
 
-        /* Estilo del botón en otras secciones */
         .btn { 
             padding: 0.85rem 2rem; border-radius: 4px; font-weight: 700; 
             display: inline-flex; align-items: center; justify-content: center; 
             text-decoration: none; font-size: 0.9rem; border: none; cursor: pointer; transition: 0.2s;
         }
-        .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(234,88,12,0.25); }
+        .btn-primary { background: var(--orange-600); color: white; box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25); }
         .btn-primary:hover { background: var(--orange-700); transform: translateY(-1px); }
         
-        /* BOTÓN COTIZAR RESPONSIVO */
         .btn-responsive-cta {
-            /* MÓVIL: Estilo Pastilla (Pill) pequeño y sutil */
             font-size: 0.8rem;
             font-weight: 700;
             color: var(--orange-600);
@@ -143,7 +137,6 @@
         .btn-responsive-cta:hover { background: var(--orange-600); color: white; }
         .btn-responsive-cta:active { transform: scale(0.95); }
 
-        /* ESCRITORIO: Botón Sólido y Grande */
         @media (min-width: 768px) {
             .btn-responsive-cta {
                 background: var(--orange-600);
@@ -152,7 +145,7 @@
                 padding: 0.85rem 2rem;
                 border-radius: 4px;
                 border: none;
-                box-shadow: 0 4px 12px rgba(234,88,12,0.25);
+                box-shadow: 0 4px 12px rgba(194, 65, 12, 0.25);
             }
             .btn-responsive-cta:hover {
                 background: var(--orange-700);
@@ -164,7 +157,6 @@
         .btn-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(4px); }
         .btn-secondary:hover { background: white; color: var(--slate-900); }
 
-        /* --- WHATSAPP FLOTANTE --- */
         .btn-whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -190,18 +182,14 @@
             position: relative; height: 90vh; min-height: 600px; 
             display: flex; align-items: center; justify-content: center; 
             background: var(--slate-900); overflow: hidden;
-            /* CORRECCIÓN 2: Padding superior para evitar que el header tape el contenido en pantallas bajas */
             padding-top: 80px; 
         }
         
-        .hero-video { 
-            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; 
-            width: auto; height: auto; transform: translateX(-50%) translateY(-50%); 
-            opacity: 0.4; z-index: 0; object-fit: cover;
-        }
         .hero-poster-img {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            object-fit: cover; opacity: 0.4; z-index: -1;
+            object-fit: cover; 
+            opacity: 0.1; /* Opacidad baja para no competir con el texto */
+            z-index: 0;
         }
         
         .hero-content { 
@@ -216,7 +204,7 @@
         @media (max-width: 768px) { .hero-buttons .btn { width: 100%; } }
 
         .tag-pill { 
-            background: rgba(234,88,12,0.15); border: 1px solid rgba(234,88,12,0.4); 
+            background: rgba(194, 65, 12, 0.15); border: 1px solid rgba(194, 65, 12, 0.4); 
             color: #fed7aa; padding: 8px 16px; border-radius: 50px; 
             font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em;
         }
@@ -239,7 +227,7 @@
         .news-badge { 
             position: absolute; top: 1rem; left: 1rem; 
             background: rgba(15, 23, 42, 0.95); color: white; 
-            padding: 4px 10px; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em;
+            padding: 4px 10px; font-size: 0.7rem; font-weight: 800; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; z-index: 10;
         }
         .news-body { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .news-title { font-size: 1.3rem; font-weight: 800; margin-bottom: 0.75rem; color: var(--slate-900); letter-spacing: -0.02em; }
@@ -258,10 +246,10 @@
 
         /* Social Proof */
         .social-proof { background: var(--slate-50); padding: 3rem 0; border-bottom: 1px solid var(--slate-200); }
-        .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; opacity: 0.5; filter: grayscale(100%); transition: 0.4s; }
+        .logo-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; transition: 0.4s; }
         @media(min-width:768px){ .logo-grid { gap: 4rem; } }
-        .logo-grid:hover { opacity: 0.8; filter: grayscale(0%); }
-        .client-text { font-weight: 900; font-size: 1.1rem; color: var(--slate-500); letter-spacing: -0.05em; font-family: system-ui; }
+        .logo-grid:hover .client-text { color: var(--orange-600); }
+        .client-text { font-weight: 900; font-size: 1.1rem; color: var(--slate-600); letter-spacing: -0.05em; font-family: system-ui; transition: 0.3s; }
 
         /* Footer */
         footer { background: var(--slate-900); color: white; padding: 4rem 0; font-size: 0.95rem; }
@@ -294,7 +282,7 @@
             
             <div class="logo-area">
                 <a href="index.html" class="logo" title="Incormaderas - Inicio">
-                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="" style="height: 2.4rem; width: auto;">
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/logo-principal-incormaderas.webp" alt="Logo Incormaderas" width="250" height="250" style="height: 2.4rem; width: auto;">
                     INCORMADERAS
                 </a>
             </div>
@@ -346,11 +334,13 @@
     </a>
 
     <div id="mobile-menu">
+        <a href="index.html" class="mobile-link">Inicio</a>
         <a href="soluciones/vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
         <a href="soluciones/vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
         <a href="productos/cocinas.html" class="mobile-link">Cocinas</a>
         <a href="productos/closets.html" class="mobile-link">Clósets</a>
         <a href="productos/puertas.html" class="mobile-link">Puertas</a>
+        <a href="productos/zonas-comunes.html" class="mobile-link">Lockers y Zonas Comunes</a>
         <a href="infraestructura.html" class="mobile-link">Nuestra Planta</a>
         <a href="zona-tecnica.html" class="mobile-link">Zona Técnica</a>
         <a href="contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
@@ -359,17 +349,14 @@
     <main>
         <section class="hero-section">
             <img class="hero-poster-img" 
-                 src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1920&auto=format&fit=crop"
+                 src="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop"
                  srcset="https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=600&auto=format&fit=crop 600w,
-                         https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop 1200w,
-                         https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1920&auto=format&fit=crop 1920w"
+                         https://images.unsplash.com/photo-1565610222536-ef125c59da2e?q=60&w=1200&auto=format&fit=crop 1200w"
                  sizes="100vw"
-                 alt="Fábrica de carpintería en Bogotá"
+                 alt="Fondo ambiental de carpintería"
+                 width="1920"
+                 height="1080"
                  fetchpriority="high">
-
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/video-planta-incormaderas.mp4" type="video/mp4">
-            </video>
 
             <div class="hero-content">
                 <span class="tag-pill">FABRICANTES B2B EN COLOMBIA</span>
@@ -417,12 +404,13 @@
                     <article class="news-card">
                         <div class="news-img">
                             <span class="news-badge">ALTA ROTACIÓN</span>
-                            <img src="https://images.unsplash.com/photo-1484154218962-a1c00207099b?auto=format&fit=crop&w=800&q=60" 
-                                 srcset="https://images.unsplash.com/photo-1484154218962-a1c00207099b?auto=format&fit=crop&w=400&q=60 400w, 
-                                         https://images.unsplash.com/photo-1484154218962-a1c00207099b?auto=format&fit=crop&w=800&q=60 800w"
-                                 sizes="(max-width: 768px) 100vw, 50vw"
+                            <img src="https://carpinteriaarquitectonica.com.co/assets/puertas-entamboradas-interior-vivienda-interes-social-vis-colombia.webp" 
                                  loading="lazy"
-                                 alt="Cocina integral lineal para vivienda VIS en aglomerado melamínico">
+                                 alt="Instalación de puertas entamboradas blancas de interior en un proyecto de vivienda de interés social (VIS) en construcción en Colombia."
+                                 title="Puertas interiores estándar para proyectos VIS en Colombia"
+                                 width="800"
+                                 height="487"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="news-body">
                             <h3 class="news-title">Vivienda VIS / VIP</h3>
@@ -434,12 +422,13 @@
                     <article class="news-card">
                         <div class="news-img">
                             <span class="news-badge" style="background: var(--orange-600);">DISEÑO EXCLUSIVO</span>
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60" 
-                                 srcset="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=60 400w, 
-                                         https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=60 800w"
-                                 sizes="(max-width: 768px) 100vw, 50vw"
+                            <img src="https://carpinteriaarquitectonica.com.co/assets/cocina-integral-moderna-apartamento.webp" 
                                  loading="lazy"
-                                 alt="Cocina integral de lujo con isla y acabados premium">
+                                 alt="Interior de apartamento nuevo mostrando una cocina integral moderna con isla y acabados en madera oscura, frente a un gran ventanal con vista panorámica a la ciudad y edificios en construcción. Sobre la isla hay un folleto de Constructora Andina."
+                                 title="Cocina integral moderna en apartamento nuevo"
+                                 width="800"
+                                 height="487"
+                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="news-body">
                             <h3 class="news-title">Vivienda No VIS (Premium)</h3>
@@ -454,9 +443,9 @@
         <section class="tech-block">
             <div class="container grid md-grid-2 items-center">
                 <div>
-                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Infraestructura Industrial y<br>Maquinaria CNC en Bogotá</h2>
+                    <h2 style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.03em;">Infraestructura Industrial y<br>Capacidad de Producción en Bogotá</h2>
                     <p style="color: var(--slate-300); font-size: 1.1rem; margin-bottom: 2.5rem; line-height: 1.6;">
-                        Nuestro taller industrial está optimizado para la velocidad y el volumen. Operamos con maquinaria CNC de precisión numérica para garantizar cortes perfectos y tiempos de entrega exactos en obra.
+                        Nuestro taller industrial combina la robustez de maquinaria estacionaria de alto rendimiento con la experticia de maestros carpinteros. Optimizamos cada corte y ensamble mediante procesos estandarizados que aseguran velocidad, precisión y, sobre todo, la confiabilidad de entrega que su obra necesita.
                     </p>
                     <div class="grid md-grid-3" style="gap: 1rem; margin-bottom: 3rem; grid-template-columns: 1fr 1fr 1fr;">
                         <div>
@@ -468,20 +457,20 @@
                             <div class="stat-label">Unds / Mes</div>
                         </div>
                         <div>
-                            <div class="stat-number">CNC</div>
-                            <div class="stat-label">Tecnología</div>
+                            <div class="stat-number">AGIL</div>
+                            <div class="stat-label">Procesos Ágiles</div>
                         </div>
                     </div>
                     <a href="infraestructura.html" class="btn btn-primary w-full md:w-auto text-center">Recorrido Virtual Taller</a>
                 </div>
                 <div style="background: var(--slate-800); padding: 1rem; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); margin-top: 2rem;">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=60" 
-                         srcset="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=400&q=60 400w, 
-                                 https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=60 800w"
-                         sizes="(max-width: 768px) 100vw, 50vw"
+                    <img src="https://carpinteriaarquitectonica.com.co/assets/planta-produccion-incormaderas.webp" 
                          loading="lazy"
-                         alt="Maquinaria CNC y taller de carpintería industrial en Bogotá" 
-                         style="width: 100%; border-radius: 8px; opacity: 0.9; display: block;">
+                         alt="Vista interior de la planta de producción de Incormaderas en Bogotá, mostrando maquinaria industrial y stock de materiales para fabricación de carpintería arquitectónica."
+                         title="Planta de producción Incormaderas Bogotá"
+                         width="800"
+                         height="456"
+                         style="width: 100%; height: auto; border-radius: 8px; opacity: 0.9; display: block;">
                 </div>
             </div>
         </section>
