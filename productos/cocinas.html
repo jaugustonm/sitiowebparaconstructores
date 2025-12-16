@@ -48,7 +48,7 @@
             .md-hidden { display: none; }
         }
 
-        /* --- 3. HEADER RESPONSIVO (Patrón Ganador) --- */
+        /* --- 3. HEADER RESPONSIVO --- */
         header { 
             position: fixed; top: 0; width: 100%; 
             background: rgba(255,255,255,0.98); 
@@ -129,14 +129,22 @@
 
         /* --- 4. HERO PRODUCT --- */
         .hero-product { 
-            position: relative; height: 60vh; min-height: 450px; 
+            position: relative; 
+            height: 50vh; /* Móvil: Altura ajustada */
+            min-height: 400px; 
             background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920&q=80');
             background-size: cover; background-position: center;
             display: flex; align-items: center; justify-content: center;
             text-align: center; color: white;
-            padding-top: 80px; /* Padding seguro para móvil */
+            padding-top: 80px; 
         }
-        @media (min-width: 768px) { .hero-product { padding-top: 96px; } }
+        @media (min-width: 768px) { 
+            .hero-product { 
+                height: 60vh; /* Escritorio: Altura original */
+                min-height: 450px; 
+                padding-top: 96px; 
+            } 
+        }
 
         .hero-product h1 { font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; margin-bottom: 1.5rem; line-height: 1.1; letter-spacing: -0.02em; }
         .hero-product p { font-size: 1.25rem; opacity: 0.95; max-width: 800px; margin: 0 auto; }
@@ -278,9 +286,14 @@
 
     <div id="mobile-menu">
         <a href="../index.html" class="mobile-link">Inicio</a>
-        <a href="../soluciones/vivienda-vis.html" class="mobile-link">Soluciones</a>
-        <a href="cocinas.html" class="mobile-link">Productos</a>
+        <a href="../soluciones/vivienda-vis.html" class="mobile-link">Vivienda VIS <span style="color:var(--orange-600)">→</span></a>
+        <a href="../soluciones/vivienda-premium.html" class="mobile-link">Vivienda Premium <span style="color:var(--orange-600)">→</span></a>
+        <a href="cocinas.html" class="mobile-link">Cocinas</a>
+        <a href="closets.html" class="mobile-link">Clósets</a>
+        <a href="puertas.html" class="mobile-link">Puertas</a>
+        <a href="zonas-comunes.html" class="mobile-link">Lockers y Zonas Comunes</a>
         <a href="../infraestructura.html" class="mobile-link">Nuestra Planta</a>
+        <a href="../zona-tecnica.html" class="mobile-link">Zona Técnica</a>
         <a href="../contacto.html" class="btn btn-primary w-full" style="margin-top: 2rem;">Cotizar Ahora</a>
     </div>
 
@@ -415,7 +428,7 @@
             <div>
                 <h4 class="flex items-center gap-2">
                     <div style="background: var(--orange-600); width: 1.8rem; height: 1.8rem; display: flex; align-items: center; justify-content: center; border-radius: 4px; color: white; font-weight: 800;">I</div>
-                    INCORMADERAS
+                    NCORMADERAS
                 </h4>
                 <p style="color: var(--slate-300); opacity: 0.8;">Ingeniería, fabricación e instalación de mobiliario arquitectónico para el sector constructor.</p>
             </div>
@@ -431,13 +444,13 @@
                 <a href="cocinas.html">Cocinas Integrales</a>
                 <a href="closets.html">Clósets</a>
                 <a href="puertas.html">Puertas</a>
-                <a href="zonas-comunes.html">Institucional</a>
+                <a href="zonas-comunes.html">Lockers y Zonas Comunes</a>
             </div>
             <div>
                 <h4>Contacto B2B</h4>
                 <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">Calle 163 # 7d - 17, Bogotá</p>
                 <p style="color: white; opacity: 0.8; margin-bottom: 0.5rem;">+57 324 440 3147</p>
-                <p style="color: white; opacity: 0.8;">licitaciones@incormaderas.com</p>
+                <p style="color: white; opacity: 0.8;">admin@incormaderas.com</p>
             </div>
         </div>
         <div class="container text-center" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; color: white;">
